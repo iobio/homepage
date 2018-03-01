@@ -1,0 +1,30 @@
+# Dependencies
+# markdown:            redcarpet
+highlighter:         rouge
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+
+future:              false
+
+# Setup
+name:                iobio home
+title:               iobio
+tagline:             'real-time genomic analysis'
+description:         blog on iobio, genomics, and visualization
+url:                 http://iobio.io
+baseurl:             /
+
+# About/contact
+author:
+  name:              Chase Miller
+  url:               https://twitter.com/ChaseAllnMiller
+  email:             chmille4@gmail.com
+
+# Custom vars
+version:             1.0.0
+
+exclude: [bin]
