@@ -159,7 +159,25 @@ a { color:rgb(110,110,110); text-decoration: underline;}
 .news h4 { margin-top: 22px; margin-bottom: 3px; }
 .news h4:first-child { margin-top: 2px; margin-bottom: 3px; }
 
+.code-list {
+  list-style-type: none;
+  font-family: quicksand;
+  font-size: 16px;
+  color: #BF616A;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px; 
+  padding-right: 10px; 
+}
 
+.code-span {
+  padding-left: 2px; 
+  padding-right: 2px; 
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
 
 /*
  * Section
