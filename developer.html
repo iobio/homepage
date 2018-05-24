@@ -13,10 +13,10 @@ permalink: developer.html
 
   <div class='section'>
     <div style="font-style: italic; font-size: 11px; margin-bottom: 20px">Disclaimer
-      This is an Alpha release. There may be bugs and the api may change moving forward. Thats the downside, the upside is that its a great time to improve the library with community help and feedback . If you'd like to contribute please feel free to jump in and/or post <a href='http://github.com/iobio/'>issues/features</a> on github.
+      This is an Alpha release. There may be bugs and the api may change moving forward. Thats the downside, the upside is that it's a great time to improve the library with community help and feedback . If you'd like to contribute please feel free to jump in and/or post <a href='http://github.com/iobio/'>issues/features</a> on github.
     </div>
     <div class='section-title'>About IOBIO</div>
-      It's useful to get an overview of the development philosphy and how iobio is organized before building an app, so that all the pieces you'll need to interact with make sense.
+      It's useful to get an overview of the development philosophy and how iobio is organized before building an app, so that all the pieces you'll need to interact with make sense.
     <div class='sub-section'>
       <div class='section-title'>How it works</div>
         At its core iobio is made up of an app and 1 or more web services. To do analysis or data manipulation, input data (via file or url) is passed through 1 or more web services and returned to the app for visualization. This requires somewhat complex websocket code on the app and socket code on the service to correctly analyze the data at each step of the "pipeline" and pass it onto the next webservice. To make all of this simplier we have created several libraries that manage creating the iobio commands/pipelines in the app (iobio.js), creating custom webservices (Minion), and visualizing the streaming data (iobio.viz).
@@ -24,7 +24,7 @@ permalink: developer.html
 
       <div class='sub-section'>
         <div class='section-title'>Faster Developement, More Apps</div>
-        Iobio is built around the philosphy of trying to make genomic web apps easier to build to encourage numerous more focused apps as opposed to big apps that do everything. Towards this goal we've built the back-end as a series of web-services that perform a specific atomic function (e.g. variant calling). These web services can be mixed and matched to support many different web apps. The goals is that when building a new web app, a developer would only need to build the UI/front-end and then simply select the web services they need to support it - no backend required! We are now offering these web services to the community to try to spur even more genomic web apps. Unrestricted the resources for this would be immense, so we have a queue system to ensure that we aren't overloaded with requests. See Queued Web Services to see how this works and how to inform the users where they are in the queue.
+        Iobio is built around the philosophy of trying to make genomic web apps easier to build to encourage numerous more focused apps as opposed to big apps that do everything. Towards this goal we've built the back-end as a series of web-services that perform a specific atomic function (e.g. variant calling). These web services can be mixed and matched to support many different web apps. The goals is that when building a new web app, a developer would only need to build the UI/front-end and then simply select the web services they need to support it - no backend required! We are now offering these web services to the community to try to spur even more genomic web apps. Unrestricted the resources for this would be immense, so we have a queue system to ensure that we aren't overloaded with requests. See Queued Web Services to see how this works and how to inform the users where they are in the queue.
     </div>
   </div>
 
