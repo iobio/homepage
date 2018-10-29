@@ -2,10 +2,10 @@
 layout: post
 title: How To Use Genetic Testing Registry
 image: /public/images/blog/panel/Gtr/banner.png
-subtitle: New look and new functionality!
+subtitle: How to generate gene list using the GTR component?
 tags:
   - Aditya Ekawade
-  - gene.iobio
+  - panel.iobio
 ---
 
 ## How To Use Genetic Testing Registry
