@@ -34,7 +34,7 @@ The genes marked with the “shield icon” are genes that GTR defines as known 
 
 For example, ATXN10 mutations clinically define Spinocerebellar ataxia 10, and GTR lists ATXN10 as the associated gene for Spinocerebellar ataxia 10.
 
-#### 2.a. Resources
+#### Resources
 <div>
     <img src="/public/images/blog/panel/Gtr/resources.png" style="width:60%;margin-top:-30px;margin-bottom: -20px;">
 </div>
@@ -63,21 +63,21 @@ Panels are classified into three categories: Specific, Moderate, and General. By
 #### 5. Filter cards
 
 
-#### 5.a. Search for Genes
+#### Search for Genes
 <div>
     <img src="/public/images/blog/panel/Gtr/gene_search.png" style="width:60%;margin-top:-30px;margin-bottom: -20px;;">
 </div>
 
 Specific genes can be searched for within the loaded gene list.
-
-#### 5. b. Number of Genes
+<br><br>
+#### Number of Genes
 <div>
     <img src="/public/images/blog/panel/Gtr/genes_selected.png" style="width:60%;margin-top:-30px;margin-bottom: -20px;;">
 </div>
 
 The number of genes currently selected and the total number of genes are displayed.
-
-#### 5c. Associated Conditions and Modes of Inheritance
+<br><br>
+#### Associated Conditions and Modes of Inheritance
 <div>
     <img src="/public/images/blog/panel/Gtr/conditions.png" style="width:60%;">
 </div>
@@ -88,15 +88,15 @@ The associated conditions and the modes of inheritance for the searched conditio
 </div>
 
 Additional filtering based on associated conditions and modes of inheritance.
-
-#### 5.d. Panels
+<br><br>
+#### Panels
 <div>
     <img src="/public/images/blog/panel/Gtr/panels_modal.png" style="width:60%;">
 </div>
 
 Panels are the tests performed by diagnostic labs. Additional filtering based on panels can be performed here. Panels are categorized and genes are color-coded based on the specific, moderate and general thresholds defined in the Panels card.  
-
-#### 5.e. Vendors
+<br><br>
+#### Vendors
 <div>
     <img src="/public/images/blog/panel/Gtr/vendors.png" style="width:50%;">
 </div>
