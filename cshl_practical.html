@@ -7,7 +7,7 @@ permalink: cshl_practical.html
 <div class='section'>
   <div class='section-title'>Advanced Sequencing Technologies and Applications course: Variant discovery practical</div>
   <div class='description'>
-    This tutorial will starts with a set of FASTQ files and a reference genome FASTA file and walks through all necessary steps to generate alignments, variant calls and interrogate those calls. All the necessary files are part of the <i>gkno</i> tutorial resources, so no additional files need to be downloaded.
+    This tutorial will starts with a set of FASTQ files and a reference genome FASTA file and walks through all necessary steps to generate alignments, variant calls and interrogate those calls.
   </div>
 
   <!-- Preparation -->
@@ -23,71 +23,41 @@ permalink: cshl_practical.html
       <li>mkdir fastq</li>
       <li>mkdir reference</li>
       <li>mkdir analysis</li>
-      <li>GKNO=/home/ubuntu/tools/gkno_launcher</li>
-      <li>REF=/home/ubuntu/workspace/data/gkno/resources/homo_sapiens_grch37/current/human_reference_v37_decoys</li>
-      <li>alias gkno="$GKNO/gkno"</li>
-      <li>cp $GKNO/resources/tutorial/current/N*fastq fastq</li>
-      <li>cp $GKNO/resources/tutorial/current/chr20_fragment.fa reference</li>
+      <li>MOVE FILES AND SOFT LINK</li>
       <li>cd reference</li>
     </ul>
   </div>
-
-  <!-- Using gkno -->
+  
+  <!-- Explanation of some Unix stuff -->
   <div class='section-subtitle'>Using gkno</div>
   <div class='description'>
-    We will be using a number of <i>gkno</i> pipelines to generate the data that we need, so let's familiarise ourselves with how it works. The <a href="/how-to/help.html">help</a> page contains all the information on getting help, but we can look at a couple of options. All pipelines are organised into categories. To see a list of these categories (these are the same as appear on the <a href="/pipelines.html">pipelines</a> page), type:
-  </div>
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>gkno -cat</li>
-    </ul>
-  </div>
-  <div class='description'>
-    If you forget this command, just type <span class="code-list code-span panel panel-danger">gkno</span> and you will be given a list of simple commands to help navigate <i>gkno</i>. If we want to see which pipelines are available within a category, just include the category name.
-  </div>
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>gkno -cat VCF-processing</li>
-    </ul>
-  </div>
-  <div class='description'>
-    We will be making use of these help messages as we progress through this tutorial.
+    EXPLANATION OF VARIABLES AND POINTING TO FILES DEFINED ABOVE
   </div>
 
   <!-- Prepare the reference sequence -->
   <div class='section-subtitle'>Prepare the reference sequence</div>
   <div class='description'>
-    We have the reference FASTA file, but most aligners do not work with this file directly. We will be using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to perform the alignment, so we need to generate the index files required by this software. We will do this using a <i>gkno</i> pipeline. Let's use the help to find the pipeline we need. 
+    We have the reference FASTA file, but aligners don't necessarily work with this file directly. We will be using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to perform the alignment, and this requires the reference to be in a particular format, accompanied by an array of index files. Bwa does have all the tools necessary to build these files itself, so first let's look at the options that bwa provides.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno -cat</li>
+      <li>bwa</li>
     </ul>
   </div>
   <div class='description'>
-    We are going to preparing the reference FASTA file for <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a>, so let's look in the 'FASTA-processing' category. Note: you don't need to type the full category name, <i>gkno</i> will hopefully figure out what you're looking for!
+    This lists all of the options available to bwa. You can see that the option <span class="code-list code-span panel panel-danger">index</span> handes the performs the indexing function on the FASTA file, so this is what we need to use. If we just type this command, we will see what additional information we need to provide.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno -cat FASTA-p</li>
+      <li>bwa index</li>
     </ul>
   </div>
   <div class='description'>
-    Looking through all the available pipelines, we can see that 'bwa-index' does exactly what we need. We can get help on specific pipelines by using the <span class="code-list code-span panel panel-danger">-h</span> argument after specifying the pipeline of choice.
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>gkno bwa-index -h</li>
-    </ul>
-  </div>
-  <div class='description'>
-    This help tells us a number of things about the pipeline. Firstly, the tools that are being run (in this case, there is only a single tool) and then a list of <a href="/how-to/parameter-sets.html">parameter sets</a>. These can be very useful, but will not be used in this tutorial. Finally, we have a list of all of the command line arguments that can be used with this pipeline. For simplicity, <i>gkno</i> tries to use the same arguments for similar uses across all the pipelines (e.g. <span class="code-list code-span panel panel-danger">--fasta-argument (-r)</span> is used across all pipelines when a FASTA reference file is being specified).
-  </div>
-  <div class='description' style='padding-top: 15px;'>
-    In general, output files do not need to be specified. If no value is provided, <i>gkno</i> will generate an output filename based on input filenames. So, to generate the index file we need, we only need to supply the name of the reference FASTA.
+    So we need to provide two things. First the prefix that will be used for all of the output files which we set as the same name as the FASTA files, and the FASTA file itself. So let's create the references indices.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno bwa-index -r chr20_fragment.fa</li>
+      <li>bwa index -p chr20_fragment chr20_fragment.fa</li>
     </ul>
   </div>
   <div class='description'>
