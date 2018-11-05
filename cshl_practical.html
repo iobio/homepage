@@ -13,7 +13,7 @@ permalink: cshl_practical.html
   <!-- Preparation -->
   <div class='section-subtitle'>Set up</div>
   <div class='description'>
-    To begin, create a new directory call 'cshl-practical', create a variable <span class='code-list code-span panel panel-danger'>GKNO</span> and copy the necessary FASTQ files to this directory.
+    To begin, create a new directory call 'cshl-practical' and copy the necessary FASTQ files to this directory.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
@@ -24,6 +24,7 @@ permalink: cshl_practical.html
       <li>mkdir reference</li>
       <li>mkdir analysis</li>
       <li>REF="~/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly.fa"</li>
+      <li>DATA="/home/ubuntu/workspace/data/utah/"</li>
       <li>cd reference</li>
     </ul>
   </div>
@@ -75,7 +76,7 @@ permalink: cshl_practical.html
   <!-- Align the reads -->
   <div class='section-subtitle'>Align reads</div>
   <div class='description'>
-    We will now go ahead and align the reads using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a>. We will be using the <i>mem</i> option within <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to generate split read alignments. Also, we will align reads to the full human reference, not the reference we just created. In reality, aligning reads is a multistep process, but we will build this up step by step. Some of these steps can be avoided by using workflows provided by different vendors, but for the purposes of learning the process, we will work through the whole process.
+    We will now go ahead and align the reads using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a>. We will be using the <i>mem</i> option within <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to generate split read alignments. In reality, aligning reads is a multistep process, but we will build this up step by step. Some of these steps can be avoided by using workflows provided by different vendors, but for the purposes of learning the process, we will work through the whole process.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
@@ -88,12 +89,71 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>bwa mem -t 8 -R "@RG\tID:NABOB\tPL:ILLUMINA\tSM:NA12878" $REF ../fastq/NA12878_1_sample.fastq ../fastq/NA12878_2_sample.fastq</li>
+      <li>bwa mem -t 8 -R "@RG\tID:NABOB\tPL:ILLUMINA\tSM:NA12878" ../reference/chr20_fragment $DATA/NA12878_1_sample.fastq $DATA/NA12878_2_sample.fastq</li>
     </ul>
+  </div>
+  <div class='description'>
+    You probably noticed that a lot of stuff just got written to the screen. This isn't that helpful, since we need all of this to be output to a file. We could just redirect the output to a file:
   </div>
   <div class='description'>
     If we look at what we just created, we can see that the output files have long, cumbersome names. This is because <i>gkno</i> wasn't given any output names so built the names based on the input files and the tasks that were performed. It would be nicer to have more succinct names, so let's redo thie alignment (we can get away with doing this because these files are so small. Don't do this with real files!!!).
   </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>bwa mem -t 8 -R "@RG\tID:NABOB\tPL:ILLUMINA\tSM:NA12878" ../reference/chr20_fragment $DATA/NA12878_1_sample.fastq $DATA/NA12878_2_sample.fastq > output.sam</li>
+    </ul>
+  </div>
+  <div class='description'>
+    Ok. Now we have a <span class="code-list code-span panel panel-danger">SAM</span> file, since it is not compressed into a binary form. We can convert this into a <span class="code-list code-span panel panel-danger">BAM</span> using samtools.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>samtools view -b -S -o output.bam output.sam</li>
+    </ul>
+  </div>
+  <div class='description'>
+    Can you figure out what the command line options we just used are for?
+    If we look at the <span class="code-list code-span panel panel-danger">SAM</span> file we just created, what do we notice?
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>less -S output.sam</li>
+    </ul>
+  </div>
+  <div class='description'>
+    All of the records are not in order. We see some reads that aren't mapped at all (remember we are using a reference genome that only represents a fraction of chromosome 20), then reads that map to chromosome 20, but in a random order. This is because the reads are output in the order they appeared in the <span class="code-list code-span panel panel-danger">FASTQ</span> file. So we need to sort this file.
+    We could just go ahead and sort the <span class="code-list code-span panel panel-danger">BAM</span> file, but you'll notice that we are starting to build up a lot of files that we don't need. We will ultimately need to remove all of these files. So, what would be easier would be to build a command line that does all of these actions at once. Before we do that, let's remove the files we've already created:
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>rm -f output.*</li>
+    </ul>
+  </div>
+  <div class='description'>
+    So now let's run a command to generate what we need, and then walk through what it all means.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>bwa mem -t 8 -R "@RG\tID:NABOB\tPL:ILLUMINA\tSM:NA12878" ../reference/chr20_fragment $DATA/NA12878_1_sample.fastq $DATA/NA12878_2_sample.fastq |</li>
+      <li>samblaster |</li>
+      <li>samtools view -b -S - |</li>
+      <li>samtools sort -o output.bam -</li>
+    </ul>
+  </div>
+
+  <!-- Explanation of some Unix stuff -->
+  <div class='section-subtitle'>More Unix stuff</div>
+  <div class='description'>
+    There are a couple of useful things in the previous command line. The <span class="code-list code-span panel panel-danger">|</span> symbol (called a pipe), 
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
   <div class='description' style="padding-top: 15px;">
     <strong>IMPORTANT</strong> - We are going to delete all the files, so make sure you are working in the 'analysis' folder that we created. Do not delete all files if you are working in a different directory.
   </div>
