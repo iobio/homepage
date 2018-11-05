@@ -23,17 +23,25 @@ permalink: cshl_practical.html
       <li>mkdir fastq</li>
       <li>mkdir reference</li>
       <li>mkdir analysis</li>
-      <li>MOVE FILES AND SOFT LINK</li>
+      <li>REF="~/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly.fa"</li>
       <li>cd reference</li>
     </ul>
   </div>
   
   <!-- Explanation of some Unix stuff -->
-  <div class='section-subtitle'>Using gkno</div>
+  <div class='section-subtitle'>Some Unix stuff</div>
   <div class='description'>
-    EXPLANATION OF VARIABLES AND POINTING TO FILES DEFINED ABOVE
+    In case this is new to people, we are using a variable to save ourselves some time with writing out long file paths. Above, we defined the variable <span class="code-list code-span panel panel-danger">REF</span> with the path to the reference genome we will be using. In order to use this variable in a command, we need to prepend the variable with a dollar sign. Try it:
   </div>
-
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>echo $REF</li>
+    </ul>
+  </div>
+  <div class='description'>
+    This command will evaluate the variable <span class="code-list code-span panel panel-danger">REF</span> and write its value to the screen.
+  </div>
+  
   <!-- Prepare the reference sequence -->
   <div class='section-subtitle'>Prepare the reference sequence</div>
   <div class='description'>
@@ -67,20 +75,20 @@ permalink: cshl_practical.html
   <!-- Align the reads -->
   <div class='section-subtitle'>Align reads</div>
   <div class='description'>
-    We will now go ahead and align the reads using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a>. We will be using the <i>mem</i> option within <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to generate split read alignments. We are going to use the full human reference for these alignments, not the reference we just created, so please ensure that you have the human resource bundle downloaded.
+    We will now go ahead and align the reads using <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a>. We will be using the <i>mem</i> option within <a href="https://github.com/lh3/bwa.git"><i>bwa</i></a> to generate split read alignments. Also, we will align reads to the full human reference, not the reference we just created. In reality, aligning reads is a multistep process, but we will build this up step by step. Some of these steps can be avoided by using workflows provided by different vendors, but for the purposes of learning the process, we will work through the whole process.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
       <li>cd ../analysis</li>
-      <li>gkno bwa -h</li>
+      <li>bwa mem</li>
     </ul>
   </div>
   <div class='description'>
-    Let's start by aligning the sample 'NA12878'. We will use the human parameter set using <span class="code-list code-span panel panel-danger">-ps human</span>. This will pull the human reference from the <i>gkno</i> resources without us having to manually specify it.
+    This shows us all of the command line arguments available to <a href="https://github.com/lh3/bwa.git"><i>bwa mem</i></a>. We won't go through all of the options, but will focus on some of the important ones. In particular, we need to specify the indexed reference genome and the <span class="code-list code-span panel panel-danger">fastq</span> files containing the reads to align.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno bwa -r $REF -p ILLUMINA -s NA12878 -id NA12878 -q ../fastq/NA12878_1_sample.fastq -q2 ../fastq/NA12878_2_sample.fastq</li>
+      <li>bwa mem -t 8 -R "@RG\tID:NABOB\tPL:ILLUMINA\tSM:NA12878" $REF ../fastq/NA12878_1_sample.fastq ../fastq/NA12878_2_sample.fastq</li>
     </ul>
   </div>
   <div class='description'>
