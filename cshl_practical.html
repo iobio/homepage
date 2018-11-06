@@ -20,7 +20,6 @@ permalink: cshl_practical.html
       <li>cd workspace</li>
       <li>mkdir cshl-practical</li>
       <li>cd cshl-practical</li>
-      <li>mkdir fastq</li>
       <li>mkdir reference</li>
       <li>mkdir analysis</li>
       <li>REF="/home/ubuntu/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly"</li>
@@ -246,33 +245,36 @@ permalink: cshl_practical.html
   <!-- Variant calls -->
   <div class='section-subtitle'>Call variants</div>
   <div class='description'>
-    Now let's use <i>gkno</i> to call variants on our BAM files. We will use the <i>freebayes</i> pipeline to do this.
+    Now let's use <i>freebayes</i> to call variants on our BAM files.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno freebayes -h</li>
+      <li>freebayes -h</li>
     </ul>
   </div>
   <div class='description'>
-    There are a huge number of commands available for <a href="https://github.com/ekg/freebayes.git"><i>freebayes</i></a>, but we can safely use the default values. We will again use the human parameter set to pull in the human reference genome FASTA file.
+    There are a huge number of commands available for <a href="https://github.com/ekg/freebayes.git"><i>freebayes</i></a>, but we can safely use the default values. Typically, we break calling up into regions to make this quicker. We will not dig too deeply into options here, so we will just call on a few chromosomes. To run things in parallel, we will use screens.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>gkno freebayes -r $REF.fa -i *bam -o all.vcf.gz</li>
+      <li>freebayes -f $REF.fa -b *bam -r 17 -v chr17.vcf</li>
+      <li>freebayes -f $REF.fa -b *bam -r 20 -v chr20.vcf</li>
+      <li>freebayes -f $REF.fa -b *bam -r 21 -v chr21.vcf</li>
+      <li>freebayes -f $REF.fa -b *bam -r 22 -v chr22.vcf</li>
     </ul>
   </div>
   <div class='description'>
-    So that took a little while to generate our results. It would be better if we could do it faster! Let's redo that calculation, but speed it up by parallelising the calling over different chromosomes. All you need to do is tell <i>gkno</i> some genomic regions to look at and it will parallelize the calling over these regions and automatically merge, compress and index the final files.
+    Now we need to merge of all these files together to generate a single VCF file, compress and index. We will use bcftools and bgzip for these roles. The bcftools merge command requires the files to be compressed already, but we can use bcftools concat instead.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>rm -f f*</li>
-      <li>rm -f all*</li>
-      <li>gkno freebayes -r $REF.fa -i *bam -o all.vcf.gz -rg 17 -rg 20 -rg 21 -rg 22 -nj 4</li>
+      <li>bcftools concat -o all.vcf chr17.vcf chr20.vcf chr21.vcf chr22.vcf</li>
+      <li>bgzip all.vcf</li>
+      <li>bcftools index all.vcf.gz</li>
     </ul>
   </div>
   <div class='description'>
-    The <span class="code-list code-span panel panel-danger">-nj</span> or <span class="code-list code-span panel panel-danger">--number-jobs</span> command tells <i>gkno</i> to keep up to four separate processes running at a time. This time, we saw that the calculation was faster. To review the format of VCF files, click the link below.
+    To review the format of VCF files, click the link below.
   </div>
 
   <!-- Optional vcf screenshot -->
