@@ -257,10 +257,10 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>freebayes -f $REF.fa -b *bam -r 17 -v chr17.vcf</li>
-      <li>freebayes -f $REF.fa -b *bam -r 20 -v chr20.vcf</li>
-      <li>freebayes -f $REF.fa -b *bam -r 21 -v chr21.vcf</li>
-      <li>freebayes -f $REF.fa -b *bam -r 22 -v chr22.vcf</li>
+      <li>freebayes -f $REF.fa -b NA12878.bam -b NA12891.bam -b NA12892.bam -r 17 -v chr17.vcf</li>
+      <li>freebayes -f $REF.fa -b NA12878.bam -b NA12891.bam -b NA12892.bam -r 20 -v chr20.vcf</li>
+      <li>freebayes -f $REF.fa -b NA12878.bam -b NA12891.bam -b NA12892.bam -r 21 -v chr21.vcf</li>
+      <li>freebayes -f $REF.fa -b NA12878.bam -b NA12891.bam -b NA12892.bam -r 22 -v chr22.vcf</li>
     </ul>
   </div>
   <div class='description'>
@@ -363,44 +363,30 @@ permalink: cshl_practical.html
   <!-- VCF manipulation -->
   <div class='section-subtitle'>Manipulate VCF files</div>
   <div class='description'>
-    We will take a look at two packages that are useful for working with VCF files, <a href="http://genome.sph.umich.edu/wiki/Vt"><i>vt</i></a> and <a href="https://github.com/ekg/vcflib"><i>vcflib</i></a>. Both of these packages can perform all sorts of different actions, so we'll play with just a couple. These tools were actually used in the <i>gkno freebayes</i> pipeline, but we'll use the tools directly here. To being, we'll create an 'alias' for the <a href="http://genome.sph.umich.edu/wiki/Vt"><i>vt</i></a> executable and an environment variable to point to the <a href="https://github.com/ekg/vcflib"><i>vcflib</i></a> directory where it's executables live.
+    We will now manipulate the VCF files using bcftools. This will perform the majority of the functions we need, although other tools exist, including <a href="http://genome.sph.umich.edu/wiki/Vt"><i>vt</i></a> and <a href="https://github.com/ekg/vcflib"><i>vcflib</i></a>.
+  </div>
+  <div class='description'>
+    First, let's view a specific portion of our VCF file, e.g. chromosome 17 only.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>alias vt="$GKNO/tools/vt/vt"</li>
-      <li>VCFLIB="$GKNO/tools/vcflib/bin"</li>
+      <li>bcftools view all.vcf.gz 17 | less -S</li>
     </ul>
   </div>
   <div class='description'>
-    First, let's use <a href="http://genome.sph.umich.edu/wiki/Vt"><i>vt</i></a> to view a specific portion of our VCF file and include the header.
+    Use the space bar and <span class="code-list code-span panel panel-danger">u</span> to navigate up and down through the VCF file by pages, or the up and down cursor keys to move up and down line by ine. The left and right cursor keys will let you move left and right through the whole VCF records. Let's look at a couple of variants that may need to be modified depending on your analysis goals. First, we can pull out all 'snp' alleles from the VCF file..
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>vt view -h -i 17 all.vcf.gz | less -S</li>
+      <li>bcftools view -i 'TYPE="snp"' all.vcf.gz | less -S</li>
     </ul>
   </div>
   <div class='description'>
-    Use the space bar and <span class="code-list code-span panel panel-danger">u</span> to navigate up and down through the VCF file by pages, or the up and down cursor keys to move up and down line by ine. The left and right cursor keys will let you move left and right through the whole VCF records. Let's look at a couple of variants that may need to be modified depending on your analysis goals. First, we can pull out all 'complex' alleles from the VCF file. For more information on filtering rules in <a href="http://genome.sph.umich.edu/wiki/Vt"><i>vt</i></a>, see the <a href="http://genome.sph.umich.edu/wiki/Vt#Filters"><i>help</i></a> provided for the tool.
+    Let's look at one more record.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>vt view -f "INFO.TYPE=='complex'" all.vcf.gz | less -S</li>
-    </ul>
-  </div>
-  <div class='description'>
-    The first variant that we see is 'TGGGT' changing to 'GGGGG'. This is really a combination of two T -&gt; G SNPs, separated by three reference matching G's. When analysing all the reads, <a href="https://github.com/ekg/freebayes.git"><i>freebayes</i></a> considers a genomic window and looks for all observed haplotypes in a window. Instead of reporting this single allele, <a href="https://github.com/ekg/freebayes.git"><i>freebayes</i></a> could have reported the two SNPs, but by reporting this way, we know that the two SNPs are phased, i.e. there are no samples that have only one of the SNPs. Chromosomes either have both alternate alleles, or both reference alleles. There may be times, though, when we want these variants to be written as separate SNPs.
-  </div>
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>vt view -h -f "INFO.TYPE=='complex'" all.vcf.gz | $VCFLIB/vcfallelicprimitives | less -S</li>
-    </ul>
-  </div>
-  <div class='description'>
-    Now we can see that the single variant has been replaced with the two SNPs. Let's look at one more record.
-  </div>
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>vt view -f "N_ALLELE&gt;2" -i 22:39636944 all.vcf.gz | less -S<li>
+      <li>bcftools view all.vcf.gz 22:39636944 | less -S<li>
     </ul>
   </div>
   <div class='description'>
@@ -408,20 +394,23 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>vt decompose -i 22:39636944 all.vcf.gz -o decomposed.vcf.gz</li>
-      <li>less -S decomposed.vcf.gz</li>
+      <li>bcftools view all.vcf.gz 22:39636944 | </li>
+      <li>bcftools norm -m - </li>
+      <li>| less -S</li>
     </ul>
   </div>
   <div class='description'>
-    After we ran the decompose command, we get a summary. In this case a single multi-allelic variant was broken down. If we look at the variants in the file <span class="code-list code-span panel panel-danger">decomposed.vcf.gz</span>, we can see that the single variant with three alternate alleles now appears as three different variants at the same genomic coordinate. You may also notice that the prepresentation of the alleles is unusual. The first variant is a deletion, but the second variant is SNP, but the base that is mutated is the last base in a five base sequence. If we perform a comparison between different VCF files, representing a SNP in this way will almost certainly mean that even if the two files being compared share the SNP, the comparison would not fail. It is extremely important that when comparing VCF files, we have a common, unambiguous representation of the alleles. We can <i>normalize</i> the variants to achieve this.
+    After we ran this command, we see that the single multi-allelic variant was broken into three seperate lines, all at the same genomic coordinate. You may notice that the presentation of the alleles is unusual. The first variant is a deletion, but the second variant is SNP, but the base that is mutated is the last base in a five base sequence. If we perform a comparison between different VCF files, representing a SNP in this way will almost certainly mean that even if the two files being compared share the SNP, the comparison would fail. It is extremely important that when comparing VCF files, we have a common, unambiguous representation of the alleles. We can <i>normalize</i> the variants to achieve this. In this case, that just means including the reference genome in the command line, so that these new variants can be interpreted.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>vt normalize -r $REF.fa decomposed.vcf.gz 2&gt;/dev/null | less -S</li>
+      <li>bcftools view all.vcf.gz 22:39636944 | </li>
+      <li>bcftools norm -f $REF.fa -m - </li>
+      <li>| less -S</li>
     </ul>
   </div>
   <div class='description'>
-    The <span class="code-list code-span panel panel-danger">2&gt;/dev/null</span> is to stop the summary from the tool being written to screen. Now we have a simple deletion and two normal looking SNPs! Normalizing variants is an important step that should not be forgotten!
+    Now we have a simple deletion and two normal looking SNPs! Normalizing variants is an important step that should not be forgotten!
   </div>
     
   <!-- Subsetting on samples -->
