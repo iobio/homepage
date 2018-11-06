@@ -23,7 +23,7 @@ permalink: cshl_practical.html
       <li>mkdir fastq</li>
       <li>mkdir reference</li>
       <li>mkdir analysis</li>
-      <li>REF="~/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly.fa"</li>
+      <li>REF="/home/ubuntu/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly"</li>
       <li>DATA="/home/ubuntu/workspace/data/utah/"</li>
       <li>cd reference</li>
     </ul>
@@ -170,7 +170,6 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>rm -f *</li>
       <li>bwa mem -t 8 -R "@RG\tID:NA12891\tPL:ILLUMINA\tSM:NA12891" $REF $DATA/NA12891_1_sample.fastq $DATA/NA12891_2_sample.fastq |</li>
       <li>samblaster |</li>
       <li>samtools view -b -S - |</li>
@@ -179,7 +178,6 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>rm -f *</li>
       <li>bwa mem -t 8 -R "@RG\tID:NA12892\tPL:ILLUMINA\tSM:NA12892" $REF $DATA/NA12892_1_sample.fastq $DATA/NA12892_2_sample.fastq |</li>
       <li>samblaster |</li>
       <li>samtools view -b -S - |</li>
@@ -187,32 +185,36 @@ permalink: cshl_practical.html
     </ul>
   </div>
   <div class='description'>
-    What did we just do? The first line created a loop over a list of values (NA12891 and NA12892 in this case). At each step in the loop, the variable <span class="code-list code-span panel panel-danger">NAME</span> is given the current value. The last line (<span class="code-list code-span panel panel-danger">done</span>) terminates this loop. For each value in the loop, we then ran the <i>gkno</i> bwa pipeline using the variable <span class="code-list code-span panel panel-danger">NAME</span> where required. Note that we used the escape character <span class="code-list code-span panel panel-danger">\</span> in the names of the FASTQ files to make it clear where the variable name ends and we needed to prepend the variable <span class="code-list code-span panel panel-danger">NAME</span> with a <span class="code-list code-span panel panel-danger">$</span> to use it.
+    Now we need to index the <span class="code-list code-span panel panel-danger">BAM</span> files. Let's use some more Unix magic to do this.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      for file in *.bam; do samtools index $file; done
+    </ul>
+  </div>
+  <div class='description'>
+    This is a standard programming 'loop'. The command <span class="code-list code-span panel panel-danger">for file in *.bam</span> sets up a loop over all files in the directory that end in <span class="code-list code-span panel panel-danger">.bam</span>. The asterisk is a wild card which can take any value. So the three <span class="code-list code-span panel panel-danger">BAM</span> files we just created match this pattern. Now, <span class="code-list code-span panel panel-danger">file</span> is a variable which takes the value of each file and applies the next commands to each file in turn. In this case, we index the bam file with samtools. We then include <span class="code-list code-span panel panel-danger">done</span> to terminate the loop. So, this command will loop over each <span class="code-list code-span panel panel-danger">BAM</span> file in turn and index it. If you now look at the contents of the directory, you will see the three <span class="code-list code-span panel panel-danger">BAM</span> files, each with a corresponding index (<span class="code-list code-span panel panel-danger">.bai</span>) file.
+  </div><div class='description'>
+    Let's generate statistics on all of the <span class="code-list code-span panel panel-danger">BAM</span> files in the same way. It is left to you to figure out the extra stuff in the following command!
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      for file in *.bam; do output=${file/bam/stats}; samtools flagstat $file > $output; done
+    </ul>
   </div>
 
   <!-- Interrogate the BAM files -->
   <div class='section-subtitle'>Check the BAM files</div>
   <div class='description'>
-    The first thing we can do is just look at the alignment statistics that <i>gkno</i> generated.
+    The first thing we can do is just look at the alignment statistics.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>more NA12878.stats</li>
+      <li>less -S NA12878.stats</li>
     </ul>
   </div>
   <div class='description'>
-    We can see that the alignments are good! Over 99% of the reads are mapped and roughly evenly between the forward and reverse strand. We also have a very low percentage of duplicate reads, which is definitely good for whole genome sequence data. But what is our average depth? We can use the <i>gkno coverage</i> pipeline to generate plots of the coverage by chromosome. Since the data we are working with only has sequences on chromosomes 17, 20, 21, and 22, we only want our plots to include these sequences, so we will generate a file containing these reference sequences first.
-  </div>
-  <div class="panel panel-danger">
-    <ul class="code-list">
-      <li>echo 20 &gt; samples.txt</li>
-      <li>echo 21 &gt;&gt; samples.txt</li>
-      <li>echo 22 &gt;&gt; samples.txt</li>
-      <li>gkno coverage -i NA12878.bam -s samples.txt</li>
-    </ul>
-  </div>
-  <div class='description'>
-    Even for this small amount of data, this command takes quite a long time. But we can get at this data much quicker by using <a href="http://bam.iobio.io" target="_blank"><i>iobio</i></a>. If you are working on a local computer, use the 'choose bam file' button and navigate to the data. You will need to select both the BAM file and its index together. If working on the cloud, you can use the 'choose bam url' to specify the url of one of the BAM files we just created. 
+    We can see that the alignments are good! Over 99% of the reads are mapped. We also have a very low number of duplicate reads, which is good for whole genome sequence data. But what is our average depth? We can get at this data using <a href="http://bam.iobio.io" target="_blank"><i>iobio</i></a>. If you are working on a local computer, use the 'choose bam file' button and navigate to the data. You will need to select both the BAM file and its index together. If working on the cloud, you can use the 'choose bam url' to specify the url of one of the BAM files we just created. 
   </div>
   <div class='description' style="padding-top: 15px;">
     Since the BAM files we created are very small and only have coverage in a couple of places in the genome, there aren't enough reads to generate statistics genome-wide. We can use the top 'Read Coverage' panel to select chromosome 20 and the zoom in on the area where alignments exist. We now generate statistics including the percentage of mapped reads etc in the region. We can now say that we have an average coverage of ~50X.
