@@ -25,6 +25,7 @@ permalink: cshl_practical.html
       <li>REF="/home/ubuntu/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly"</li>
       <li>DATA="/home/ubuntu/workspace/data/utah/"</li>
       <li>cd reference</li>
+      <li>cp ~/workspace/data/utah/chr20_fragment.fa .</li>
     </ul>
   </div>
   
@@ -120,7 +121,7 @@ permalink: cshl_practical.html
     </ul>
   </div>
   <div class='description'>
-    All of the records are not in order. We see some reads that aren't mapped at all (remember we are using a reference genome that only represents a fraction of chromosome 20), then reads that map to chromosome 20, but in a random order. This is because the reads are output in the order they appeared in the <span class="code-list code-span panel panel-danger">FASTQ</span> file. So we need to sort this file.
+    All of the records are not in order. We see some reads that aren't mapped at all (remember we are using a reference genome that only represents a fraction of chromosome 20), then reads that map to chromosome 20, but in a random order. This is because the reads are output in the order they appeared in the <span class="code-list code-span panel panel-danger">FASTQ</span> file. So we need to sort this file. (To exit the less view, just press 'q').
   </div>
   <div class='description'>
     We could just go ahead and sort the <span class="code-list code-span panel panel-danger">BAM</span> file, but you'll notice that we are starting to build up a lot of files that we don't need. We will ultimately need to remove all of these files. So, what would be easier would be to build a command line that does all of these actions at once. Before we do that, let's remove the files we've already created:
@@ -149,7 +150,7 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>samtools index output.bam -</li>
+      <li>samtools index output.bam</li>
     </ul>
   </div>
   <div class='description'>
@@ -395,8 +396,8 @@ permalink: cshl_practical.html
   <div class="panel panel-danger">
     <ul class="code-list">
       <li>bcftools view all.vcf.gz 22:39636944 | </li>
-      <li>bcftools norm -m - </li>
-      <li>| less -S</li>
+      <li>bcftools norm -m - |</li>
+      <li>less -S</li>
     </ul>
   </div>
   <div class='description'>
@@ -405,8 +406,8 @@ permalink: cshl_practical.html
   <div class="panel panel-danger">
     <ul class="code-list">
       <li>bcftools view all.vcf.gz 22:39636944 | </li>
-      <li>bcftools norm -f $REF.fa -m - </li>
-      <li>| less -S</li>
+      <li>bcftools norm -f $REF.fa -m - |</li>
+      <li>less -S</li>
     </ul>
   </div>
   <div class='description'>
@@ -419,23 +420,31 @@ permalink: cshl_practical.html
     If we perform joint calling with a large population of samples, we will often have a VCF file that contains hundreds or thousands of samples. But what if we're only interested in one or two of these samples?
   </div>
   <div class='description' style="padding-top: 15px;">
-    There are two useful tools that we might want to use here, depending on our ultimate goal. The first tool, vcflib, will just keep the samples that we want, but not change the number of variant records in the file.
+    We can create a new VCF file that only contains a single sample, or muliple samples of our choosing:
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>$VCFLIB/vcfkeepsamples all.vcf.gz NA12878 > NA12878.vcf</li>
-      <li>gkno compress-vcf -i NA12878.vcf</li>
+      <li>bcftools view -s NA12878 all.vcf.gz | less -S</li>
     </ul>
   </div>    
   <div class='description'>
-    We have generated the new VCF file, NA12878.vcf.gz, which is exactly the same as all.vcf.gz, except that there is only one sample column: that for the sample NA12878. We could have listed as many samples as we liked in the command line, and each of those would have been kept.
+    Note that we can always output these results to file, but we are just interested in looking at the output, we don't need to create files.
   </div>
   <div class='description' style="padding-top: 15px;">
-    What is the problem with this? The main problem here, is that we often want a VCF file that contains information about the requested samples, but only keeps variants that are polymorphic in those samples. For example, let's take a look at this new file in a bit more detail.
+    What is the problem with this operation? Let's run these two commands and see if it is clearer.
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>less NA12878.vcf.gz | grep "0/0" | less -S</li>
+      <li>bcftools view -s NA12878 all.vcf.gz | wc -l</li>
+      <li>bcftools view all.vcf.gz | wc -l</li>
+    </ul>
+  </div>    
+  <div class='description' style="padding-top: 15px;">
+    Is it desirable that both of these files contain the same number of variants? Probably not. When we create a VCF file for sample NA12878 only, we probably want that file to only contain variants that are polymorphic in that sample. Let's take a look at this new file in a bit more detail.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>bcftools view -s NA12878 all.vcf.gz | grep "0/0" | less -S</li>
     </ul>
   </div> 
   <div class='description'>
@@ -443,21 +452,31 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>echo "NA12878" > samples.txt</li>
-      <li>vt subset -s samples.txt all.vcf.gz -o NA12878_only.vcf.gz</li>
-      <li>less NA12878.vcf.gz | grep -v "^#" | wc -l</li>
-      <li>less NA12878_only.vcf.gz | grep -v "^#" | wc -l</li>
+      <li>bcftools view -s NA12878 all.vcf.gz | bcftools view -e 'GT=="RR"' -o NA12878.vcf -</li>
+      <li>less NA12878.vcf | grep -v "^#" | wc -l</li>
     </ul>
   </div> 
   <div class='description'>
-    With those last bash commands, we can see that the NA12878_only.vcf.gz file has 119 less variants than NA12878.vcf.gz. Let's just check that that makes sense.
+    So there are only 218 polymorphic sites for NA12878. Note that we split the command above into two parts. We could have just put the <span class="code-list code-span panel panel-danger">-e 'GT=="RR"'</span> in the first command couldn't we? Try it and see. 
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>less NA12878.vcf.gz | grep "0/0" | wc -l</li>
+      <li>bcftools view -s NA12878 -e 'GT=="RR"' -o test.vcf all.vcf.gz</li>
+      <li>less test.vcf | grep -v "^#" | wc -l</li>
     </ul>
   </div>
   <div class='description'>
-    Exactly 119 variants kept in NA12878.vcf.gz were homozygous reference and were removed by using the vt subset command. Again, we can subset on multiple samples by adding more sample IDs to the samples.txt file.
+    Now there are only 101 variants, not 218. What happened? This example highlights that it is very important to understand the tools we are using and how they operate.
   </div>
-</div>
+  
+   <!-- Clean up -->
+  <div class='section-subtitle'>Clean up</div>
+  <div class='description'>
+    This is the end of the tutorial, so we can clean up all the files and directories we created.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>cd ~/workspace</li>
+      <li>rm -fr cshl-practical</li>
+    </ul>
+  </div>    
