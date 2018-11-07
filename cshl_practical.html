@@ -25,6 +25,7 @@ permalink: cshl_practical.html
       <li>REF="/home/ubuntu/workspace/data/fasta/GRCh37/Homo_sapiens.GRCh37.75.dna_sm.primary_assembly"</li>
       <li>DATA="/home/ubuntu/workspace/data/utah/"</li>
       <li>cd reference</li>
+      <li>cp ~/workspace/data/utah/chr20_fragment.fa .</li>
     </ul>
   </div>
   
@@ -120,7 +121,7 @@ permalink: cshl_practical.html
     </ul>
   </div>
   <div class='description'>
-    All of the records are not in order. We see some reads that aren't mapped at all (remember we are using a reference genome that only represents a fraction of chromosome 20), then reads that map to chromosome 20, but in a random order. This is because the reads are output in the order they appeared in the <span class="code-list code-span panel panel-danger">FASTQ</span> file. So we need to sort this file.
+    All of the records are not in order. We see some reads that aren't mapped at all (remember we are using a reference genome that only represents a fraction of chromosome 20), then reads that map to chromosome 20, but in a random order. This is because the reads are output in the order they appeared in the <span class="code-list code-span panel panel-danger">FASTQ</span> file. So we need to sort this file. (To exit the less view, just press 'q').
   </div>
   <div class='description'>
     We could just go ahead and sort the <span class="code-list code-span panel panel-danger">BAM</span> file, but you'll notice that we are starting to build up a lot of files that we don't need. We will ultimately need to remove all of these files. So, what would be easier would be to build a command line that does all of these actions at once. Before we do that, let's remove the files we've already created:
@@ -149,7 +150,7 @@ permalink: cshl_practical.html
   </div>
   <div class="panel panel-danger">
     <ul class="code-list">
-      <li>samtools index output.bam -</li>
+      <li>samtools index output.bam</li>
     </ul>
   </div>
   <div class='description'>
@@ -395,8 +396,8 @@ permalink: cshl_practical.html
   <div class="panel panel-danger">
     <ul class="code-list">
       <li>bcftools view all.vcf.gz 22:39636944 | </li>
-      <li>bcftools norm -m - </li>
-      <li>| less -S</li>
+      <li>bcftools norm -m - |</li>
+      <li>less -S</li>
     </ul>
   </div>
   <div class='description'>
@@ -405,8 +406,8 @@ permalink: cshl_practical.html
   <div class="panel panel-danger">
     <ul class="code-list">
       <li>bcftools view all.vcf.gz 22:39636944 | </li>
-      <li>bcftools norm -f $REF.fa -m - </li>
-      <li>| less -S</li>
+      <li>bcftools norm -f $REF.fa -m - |</li>
+      <li>less -S</li>
     </ul>
   </div>
   <div class='description'>
@@ -467,3 +468,15 @@ permalink: cshl_practical.html
   <div class='description'>
     Now there are only 101 variants, not 218. What happened? This example highlights that it is very important to understand the tools we are using and how they operate.
   </div>
+  
+   <!-- Clean up -->
+  <div class='section-subtitle'>Clean up</div>
+  <div class='description'>
+    This is the end of the tutorial, so we can clean up all the files and directories we created.
+  </div>
+  <div class="panel panel-danger">
+    <ul class="code-list">
+      <li>cd ~/workspace</li>
+      <li>rm -fr cshl-practical</li>
+    </ul>
+  </div>    
