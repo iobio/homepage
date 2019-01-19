@@ -6,11 +6,17 @@ order: 1
 ---
 <!-- special padding for what's next block -->
 <!-- <style> body{padding-bottom: 450px;}</style> -->
-<section class="bg-primary">
+<section class="bg-primary" style="margin-top: -40px; margin-bottom: -30px;">
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 text-white text-center">
-        <h1 class="font-weight-light"><b>Real-time</b> Genomic Analysis</h1>
+        <h1 class="font-weight-light">Real-time <b id="typed-element"></b> </h1>
+      </div>
+      <div class="col-lg-7 text-center">
+        <p style="font-size: 20px; color:rgba(255, 255, 255, 0.75)">
+          iobio uses immediate visual feedback to make understanding
+          complex genomic datasets more intuitive, and analysis more interactive
+        </p>
       </div>
     </div>
     <!-- <div class="row">
@@ -31,32 +37,32 @@ order: 1
   <div class="container-full mb-10">
     <div class="row gutter-0 justify-content-center">
       <div class="col-12">
-        <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[3,2,1]" data-center="true" data-nav="true" data-margin="20" data-loop="true">
-          <div class="card card-showcase lift">
+        <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[3,2,1]" data-center="true" data-nav="true" data-margin="20" data-loop="true" data-dots="true"	data-autoplay="true">
+        <!-- <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[3,2,1]" data-center="true" data-nav="true" data-margin="20" data-loop="true" data-dots="true"> -->
+          <div  class="card card-showcase lift">
             <a href="html/docs/layout-1.html">
-              <img class="card-img-top" src="/public/images/slider/vcf.png" alt="Documentation Layout 1">
-              <figcaption class="figure-caption">A caption for the above image.</figcaption>
+              <img id="vcf" class="card-img-top" src="/public/images/slider/vcf.png" alt="Documentation Layout 1">
             </a>
           </div>
           <div class="card card-showcase lift">
             <a href="html/docs/layout-2.html">
-              <img class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/layout-2.png" alt="Documentation Layout 2">
+              <img id="2" class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/layout-2.png" alt="Documentation Layout 2">
               <figcaption class="figure-caption">A caption for the above image.</figcaption>
             </a>
           </div>
           <div class="card card-showcase lift">
             <a href="html/pages/changelog.html">
-              <img class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/changelog.png" alt="Changelog">
+              <img id="changelog" class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/changelog.png" alt="Changelog">
             </a>
           </div>
           <div class="card card-showcase lift">
             <a href="html/docs/layout-4.html">
-              <img class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/layout-4.png" alt="Documentation Layout 4">
+              <img id="4" class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/layout-4.png" alt="Documentation Layout 4">
             </a>
           </div>
           <div class="card card-showcase lift">
             <a href="html/help/homepage-1.html">
-              <img class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/helpcenter.png" alt="Helpcenter">
+              <img id="homepage-1" class="card-img-top" src="https://guidebook.webuildthemes.com/assets/images/helpcenter.png" alt="Helpcenter">
             </a>
           </div>
         </div>
@@ -80,7 +86,7 @@ order: 1
     <div class="row align-items-center">
 
       <div class="col-lg-3">
-        <div class="card">
+        <div class="card lift">
           <div class="card-body">
             <div class="row gutter-2 align-items-center">
               <div class="col">
@@ -103,7 +109,7 @@ order: 1
       </div>
 
       <div class="col-lg-3">
-        <div class="card">
+        <div class="card lift">
           <div class="card-body">
             <div class="row gutter-2 align-items-center">
               <div class="col">
@@ -126,7 +132,7 @@ order: 1
       </div>
 
       <div class="col-lg-3">
-        <div class="card">
+        <div class="card lift">
           <div class="card-body">
             <div class="row gutter-2 align-items-center">
               <div class="col">
@@ -149,7 +155,7 @@ order: 1
       </div>
 
       <div class="col-lg-3">
-        <div class="card">
+        <div class="card lift">
           <div class="card-body">
             <div class="row gutter-2 align-items-center">
               <div class="col">
@@ -177,6 +183,30 @@ order: 1
   </div>
 </section>
 
+<!-- cta -->
+<div class="half ">
+  <span class="half-bg bg-white"></span>
+  <div class="half-block">
+    <div class="row">
+      <div class="col">
+        <div class="cta boxed no-border bg-primary p-3 p-md-5">
+          <div class="row justify-content-center">
+            <div class="col text-white">
+              <h3><b>Sign up</b> to hear about our new apps!</h3>
+              <form class="form-inline">
+                <input type="email" style="width:80%" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <button type="submit" class="btn btn-primary">Subscribe</button>
+              </form>
+
+              <!-- <p class="lead">Purchase Guidebook now, and make documenting your project piece of cake. <a href="" class="action text-white">Buy Now</a></p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- / cta -->
 
 
 <!-- blog posts -->
@@ -185,8 +215,7 @@ order: 1
     <!-- Heading -->
     <div class="row justify-content-center">
       <div class="col-md-6 text-center">
-        <h2>Blog posts</b></h2>
-        <p>They include renowned labs from around the world!</p>
+        <h2>Recent <b>Blog Posts</b></h2>
       </div>
     </div>
 
@@ -194,13 +223,17 @@ order: 1
     <div class="row justify-content-center">
       {% for post in site.posts limit:6 %}
       <div class="col-lg-4">
-        <div class="card mb-2">
-          <img class="card-img-top blog-card-snippet" alt="..." src={{ post.image }}>
+        <div class="card lift mb-2">
+          <a href="{{ post.url }}">
+            <img class="card-img-top blog-card-snippet" alt="{{post.title}}" src={{ post.image }}>
+          </a>
           <div class="user">
             <img class="avatar avatar-lg avatar-headshot float-right" src="/public/images/team/{{ post.tags | first | replace:' ','_'  }}.png" alt="Avatar" >
           </div>
           <div class="card-body">
-            <h5 class="card-title">{{ post.title }}</h5>
+            <a href="{{ post.url }}">
+              <h5 class="card-title">{{ post.title }}</h5>
+            </a>
             <p class="card-text">{{ post.subtitle }}</p>
             <p class="card-text"><small class="text-muted">BY {{ post.tags | first }} ON {{ post.date | date: "%b %-d, %Y" }}</small></p>
           </div>
