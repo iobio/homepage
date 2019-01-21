@@ -73,6 +73,36 @@
         max-width: 1340px;
       }
     }
+
+    .active.center {
+      transform: scale(1);
+      -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
+        filter: grayscale(0);
+        filter: blur(0px);
+        -webkit-filter: blur(0px);
+    }
+    .active {
+      transform: scale(1);
+      transition: .6s ease;
+      -webkit-filter: grayscale(100%);
+        /* filter: grayscale(100%); */
+        filter: blur(0.7px);
+      -webkit-filter: blur(0.7px);
+
+    }
+
+    #BeforeActiveSliderContent{
+      color: #0073ff;
+      font-size: 21px;
+      margin-top: 10px;
+      font-weight: 600;
+      /* text-shadow: 1px 1px 1px #797979; */
+    }
+
+    #ActiveSliderContent{
+      width:600px;
+      word-break: break-all;
+    }
   </style>
   <!-- tracking code -->
   <script>
@@ -83,9 +113,9 @@
 
       var owl = $(".owl-carousel");
       // $( ".owl-item.active.center" ).append( "<p id='ActiveSliderContent'></p>" );
-      $('.owl-stage-outer').before("<center><p id='BeforeActiveSliderContent'>VCF</p></center>")
+      // $('.owl-stage-outer').before("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center>")
 
-      $('.owl-stage-outer').after("<center><p id='ActiveSliderContent'>VCF</p></center>")
+      $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><p id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</p></center>")
 
       owl.on('changed.owl.carousel',function(property){
           var current = property.item.index;
@@ -97,13 +127,30 @@
 
           console.log("cskk",  $( ".owl-item.active.center" ))
 
-
-          if(idFound==="4"){
-            document.getElementById('ActiveSliderContent').innerHTML = "4 th image"
+          switch (idFound) {
+            case "vcf":
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "vcf.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics"
+              break;
+            case "genepanel":
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "genepanel.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A web app for generating list of genes based on suspected conditions and phenotypes"
+              break;
+            case "gene":
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "gene.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A web app for investigating potential disease-causing variants"
+              break;
+            case "bam":
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "bam.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics"
+              break;
           }
-          else if(idFound==="vcf"){
-            document.getElementById('ActiveSliderContent').innerHTML = "VCF"
-          }
+          // if(idFound==="4"){
+          //   document.getElementById('ActiveSliderContent').innerHTML = "4 th image"
+          // }
+          // else if(idFound==="vcf"){
+          //   document.getElementById('ActiveSliderContent').innerHTML = "VCF"
+          // }
 
       });
 
