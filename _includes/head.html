@@ -94,6 +94,9 @@
 
     }
 
+    .rounded{
+      height: 100px
+    }
     #BeforeActiveSliderContent{
       color: #0073ff;
       font-size: 21px;
@@ -131,7 +134,7 @@
       // $( ".owl-item.active.center" ).append( "<p id='ActiveSliderContent'></p>" );
       // $('.owl-stage-outer').before("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center>")
 
-      $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><p id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</p></center>")
+      $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><i id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</i></center>")
 
       owl.on('changed.owl.carousel',function(property){
           var current = property.item.index;

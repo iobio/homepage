@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80.422 71.821">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: #e8f1ff;
+      }
+
+      .cls-3 {
+        fill: #f5f5f5;
+      }
+
+      .cls-4 {
+        fill: #f2f2f2;
+      }
+
+      .cls-5 {
+        fill: #f7f7f7;
+      }
+
+      .cls-6 {
+        fill: #eaeaea;
+      }
+
+      .cls-7 {
+        fill: #fafafa;
+      }
+
+      .cls-8 {
+        fill: #f8f8f8;
+      }
+
+      .cls-9 {
+        fill: #d9eef8;
+      }
+
+      .cls-10 {
+        fill: #ebfaff;
+      }
+
+      .cls-11 {
+        fill: rgba(255,255,255,0);
+      }
+
+      .cls-12 {
+        fill: rgba(117,210,245,0);
+      }
+
+      .cls-13 {
+        fill: rgba(255,255,255,0.25);
+      }
+
+      .cls-14 {
+        fill: #a7e1f8;
+      }
+
+      .cls-15 {
+        fill: rgba(78,178,221,0);
+      }
+
+      .cls-16 {
+        fill: #ededed;
+      }
+
+      .cls-17 {
+        fill: rgba(230,237,240,0);
+      }
+
+      .cls-18 {
+        fill: #f4f4f4;
+      }
+
+      .cls-19 {
+        fill: #e4f2f8;
+      }
+
+      .cls-20 {
+        fill: #dbf1fa;
+      }
+
+      .cls-21 {
+        fill: #c6e7f9;
+      }
+
+      .cls-22 {
+        fill: rgba(198,231,249,0);
+      }
+
+      .cls-23 {
+        fill: #eff1f4;
+      }
+
+      .cls-24 {
+        fill: rgba(248,253,255,0.19);
+      }
+
+      .cls-25 {
+        fill: rgba(247,247,247,0.69);
+      }
+
+      .cls-26 {
+        fill: rgba(36,160,225,0);
+      }
+
+      .cls-27 {
+        fill: rgba(125,205,237,0);
+      }
+
+      .cls-28 {
+        fill: #2763c3;
+      }
+
+      .cls-29 {
+        fill: #f5f7fa;
+      }
+
+      .cls-30 {
+        fill: #cae7f9;
+      }
+
+      .cls-31 {
+        fill: rgba(107,193,237,0);
+      }
+
+      .cls-32 {
+        fill: rgba(105,191,237,0);
+      }
+
+      .cls-33 {
+        fill: none;
+        stroke: #fff;
+        stroke-linecap: round;
+      }
+    </style>
+  </defs>
+  <g id="Group_21" data-name="Group 21" transform="translate(-140 -17.74)">
+    <path id="Simple_triangle" class="cls-1" d="M20.962,17.058c5.893,8.49-2.3,5.325-2.3,5.325H15S15.07,8.568,20.962,17.058Z" transform="translate(192.637 50.103)"/>
+    <path id="Simple_triangle-2" data-name="Simple_triangle" class="cls-1" d="M20.2,16,15,21.421Z" transform="translate(187.435 56.486)"/>
+    <path id="Simple_triangle-3" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,4.584H2.166L6.15,0Z" transform="translate(218.043 77.07) rotate(180)"/>
+    <path id="Simple_triangle-4" data-name="Simple_triangle" class="cls-1" d="M6.441-.843l5.787,9.263L5.1,8.7Z" transform="translate(225.068 64.643) rotate(-180)"/>
+    <path id="Simple_triangle-5" data-name="Simple_triangle" class="cls-2" d="M20.2,16l3.9,5.421H15Z" transform="translate(192.637 40.224)"/>
+    <path id="Simple_triangle-6" data-name="Simple_triangle" class="cls-3" d="M20.2,16l6.117,5.814L15,21.421Z" transform="translate(187.435 45.645)"/>
+    <path id="Simple_triangle-7" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421-11.763.9.949-5.16,2.76-6.5Z" transform="translate(218.043 67.065) rotate(180)"/>
+    <path id="Simple_triangle-8" data-name="Simple_triangle" class="cls-1" d="M5.217,0l5.189,5.417H6.244Z" transform="translate(223.246 50.803) rotate(-180)"/>
+    <path id="Simple_triangle-9" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(192.637 29.383)"/>
+    <path id="Simple_triangle-10" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(187.435 34.803)"/>
+    <path id="Simple_triangle-11" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(218.043 56.224) rotate(180)"/>
+    <path id="Simple_triangle-12" data-name="Simple_triangle" class="cls-1" d="M20.2,16l-.66,5.421H15Z" transform="translate(197.84 34.803)"/>
+    <path id="Simple_triangle-13" data-name="Simple_triangle" class="cls-1" d="M17.41,14.376l1.9,7.044H15Z" transform="translate(197.84 23.962)"/>
+    <path id="Simple_triangle-14" data-name="Simple_triangle" class="cls-5" d="M5.2,0l5.2,5.421H0Z" transform="translate(155.609 45.383) rotate(-180)"/>
+    <path id="Simple_triangle-15" data-name="Simple_triangle" class="cls-1" d="M18.829,16l3.829,5.421H15Z" transform="translate(192.637 18.541)"/>
+    <path id="Simple_triangle-16" data-name="Simple_triangle" class="cls-6" d="M20.2,16l5.2,5.421H15Z" transform="translate(187.435 23.962)"/>
+    <path id="Simple_triangle-17" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H3.086Z" transform="translate(218.043 45.383) rotate(180)"/>
+    <path id="Simple_triangle-18" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H-.718Z" transform="translate(212.84 72.486) rotate(-180)"/>
+    <path id="Simple_triangle-19" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421H0Z" transform="translate(212.84 61.645) rotate(-180)"/>
+    <path id="Simple_triangle-20" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421H0Z" transform="translate(212.84 50.803) rotate(-180)"/>
+    <path id="Simple_triangle-21" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(182.232 51.065)"/>
+    <path id="Simple_triangle-22" data-name="Simple_triangle" class="cls-8" d="M5.2,0l5.2,5.421H0Z" transform="translate(207.637 77.906) rotate(180)"/>
+    <path id="Simple_triangle-23" data-name="Simple_triangle" class="cls-7" d="M20.2,16l5.2,5.421H15Z" transform="translate(182.232 40.224)"/>
+    <path id="Simple_triangle-24" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(207.637 67.065) rotate(180)"/>
+    <path id="Simple_triangle-25" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(177.029 45.645)"/>
+    <path id="Simple_triangle-26" data-name="Simple_triangle" class="cls-5" d="M5.2,0l5.2,5.421H0Z" transform="translate(202.434 72.486) rotate(180)"/>
+    <path id="Simple_triangle-27" data-name="Simple_triangle" class="cls-6" d="M20.2,16l5.2,5.421H15Z" transform="translate(182.232 29.383)"/>
+    <path id="Simple_triangle-28" data-name="Simple_triangle" class="cls-2" d="M5.2,0l5.2,5.421H0Z" transform="translate(207.637 56.224) rotate(180)"/>
+    <path id="Simple_triangle-29" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(177.029 34.803)"/>
+    <path id="Simple_triangle-30" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(202.434 61.645) rotate(180)"/>
+    <path id="Simple_triangle-31" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 40.224)"/>
+    <path id="Simple_triangle-32" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 67.065) rotate(180)"/>
+    <path id="Simple_triangle-33" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(166.623 45.645)"/>
+    <path id="Simple_triangle-34" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 72.486) rotate(180)"/>
+    <path id="Simple_triangle-35" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 18.541)"/>
+    <path id="Simple_triangle-36" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 45.383) rotate(180)"/>
+    <path id="Simple_triangle-37" data-name="Simple_triangle" class="cls-3" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 51.065)"/>
+    <path id="Simple_triangle-38" data-name="Simple_triangle" class="cls-10" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 77.906) rotate(180)"/>
+    <path id="Simple_triangle-39" data-name="Simple_triangle" class="cls-11" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 40.224)"/>
+    <path id="Simple_triangle-40" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 67.065) rotate(180)"/>
+    <path id="Simple_triangle-41" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(166.623 34.803)"/>
+    <path id="Simple_triangle-42" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 61.645) rotate(180)"/>
+    <path id="Simple_triangle-43" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 29.383)"/>
+    <path id="Simple_triangle-44" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 56.224) rotate(180)"/>
+    <path id="Simple_triangle-45" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(177.029 23.962)"/>
+    <path id="Simple_triangle-46" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(202.434 50.803) rotate(180)"/>
+    <path id="Simple_triangle-47" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(182.232 18.541)"/>
+    <path id="Simple_triangle-48" data-name="Simple_triangle" class="cls-9" d="M5.2,0l5.2,5.421H0Z" transform="translate(207.637 45.383) rotate(180)"/>
+    <path id="Simple_triangle-49" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(156.217 45.645)"/>
+    <path id="Simple_triangle-50" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 72.486) rotate(180)"/>
+    <path id="Simple_triangle-51" data-name="Simple_triangle" class="cls-10" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 51.065)"/>
+    <path id="Simple_triangle-52" data-name="Simple_triangle" class="cls-8" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 77.906) rotate(180)"/>
+    <path id="Simple_triangle-53" data-name="Simple_triangle" class="cls-12" d="M20.2,16l5.2,5.421H15Z" transform="translate(151.015 40.224)"/>
+    <path id="Simple_triangle-54" data-name="Simple_triangle" class="cls-3" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 67.065) rotate(180)"/>
+    <path id="Simple_triangle-55" data-name="Simple_triangle" class="cls-13" d="M20.2,16l5.2,5.421H15Z" transform="translate(156.217 34.803)"/>
+    <path id="Simple_triangle-56" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 61.645) rotate(180)"/>
+    <path id="Simple_triangle-57" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 29.383)"/>
+    <path id="Simple_triangle-58" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 56.224) rotate(180)"/>
+    <path id="Simple_triangle-59" data-name="Simple_triangle" class="cls-9" d="M20.2,16l5.2,5.421H15Z" transform="translate(166.623 23.962)"/>
+    <path id="Simple_triangle-60" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 50.803) rotate(180)"/>
+    <path id="Simple_triangle-61" data-name="Simple_triangle" class="cls-14" d="M20.2,16l5.2,5.421H15Z" transform="translate(145.812 34.803)"/>
+    <path id="Simple_triangle-62" data-name="Simple_triangle" class="cls-10" d="M5.2,0l5.2,5.421H0Z" transform="translate(171.217 61.645) rotate(180)"/>
+    <path id="Simple_triangle-63" data-name="Simple_triangle" class="cls-15" d="M20.2,16l5.2,5.421H15Z" transform="translate(151.015 29.383)"/>
+    <path id="Simple_triangle-64" data-name="Simple_triangle" class="cls-10" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 56.224) rotate(180)"/>
+    <path id="Simple_triangle-65" data-name="Simple_triangle" class="cls-10" d="M20.2,16l5.2,5.421H15Z" transform="translate(156.217 23.962)"/>
+    <path id="Simple_triangle-66" data-name="Simple_triangle" class="cls-10" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 50.803) rotate(180)"/>
+    <path id="Simple_triangle-67" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 18.541)"/>
+    <path id="Simple_triangle-68" data-name="Simple_triangle" class="cls-2" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 45.383) rotate(180)"/>
+    <path id="Simple_triangle-69" data-name="Simple_triangle" class="cls-16" d="M20.2,16l5.2,5.421H15Z" transform="translate(140.609 40.224)"/>
+    <path id="Simple_triangle-70" data-name="Simple_triangle" class="cls-17" d="M5.2,0l5.2,5.421H0Z" transform="translate(166.014 67.065) rotate(180)"/>
+    <path id="Simple_triangle-71" data-name="Simple_triangle" class="cls-10" d="M20.2,16l5.2,5.421H15Z" transform="translate(145.812 45.645)"/>
+    <path id="Simple_triangle-72" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(171.217 72.486) rotate(180)"/>
+    <path id="Simple_triangle-73" data-name="Simple_triangle" class="cls-18" d="M20.2,16l5.2,5.421H15Z" transform="translate(151.015 51.065)"/>
+    <path id="Simple_triangle-74" data-name="Simple_triangle" class="cls-18" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 77.906) rotate(180)"/>
+    <path id="Simple_triangle-75" data-name="Simple_triangle" class="cls-19" d="M20.2,16l5.2,5.421H15Z" transform="translate(140.609 51.065)"/>
+    <path id="Simple_triangle-76" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(166.014 77.906) rotate(180)"/>
+    <path id="Simple_triangle-77" data-name="Simple_triangle" class="cls-20" d="M20.2,16l5.2,5.421H15Z" transform="translate(130.203 40.224)"/>
+    <path id="Simple_triangle-78" data-name="Simple_triangle" class="cls-20" d="M5.2,0l5.2,5.421H0Z" transform="translate(155.609 67.065) rotate(180)"/>
+    <path id="Simple_triangle-79" data-name="Simple_triangle" class="cls-21" d="M20.2,16l5.2,5.421H15Z" transform="translate(135.406 34.803)"/>
+    <path id="Simple_triangle-80" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(160.812 61.645) rotate(180)"/>
+    <path id="Simple_triangle-81" data-name="Simple_triangle" class="cls-22" d="M20.2,16l5.2,5.421H15Z" transform="translate(130.203 29.383)"/>
+    <path id="Simple_triangle-82" data-name="Simple_triangle" class="cls-5" d="M20.2,16l5.2,5.421H15Z" transform="translate(125 23.962)"/>
+    <path id="Simple_triangle-83" data-name="Simple_triangle" class="cls-3" d="M5.2,0l5.2,5.421H0Z" transform="translate(166.014 56.224) rotate(180)"/>
+    <path id="Simple_triangle-84" data-name="Simple_triangle" class="cls-23" d="M20.2,16l5.2,5.421H15Z" transform="translate(145.812 23.962)"/>
+    <path id="Simple_triangle-85" data-name="Simple_triangle" class="cls-23" d="M5.2,0l5.2,5.421H0Z" transform="translate(171.217 50.803) rotate(180)"/>
+    <path id="Simple_triangle-86" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(151.015 18.541)"/>
+    <path id="Simple_triangle-87" data-name="Simple_triangle" class="cls-5" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 45.383) rotate(180)"/>
+    <path id="Simple_triangle-88" data-name="Simple_triangle" class="cls-24" d="M5.2,0l5.2,5.421H0Z" transform="translate(150.406 50.803) rotate(180)"/>
+    <path id="Simple_triangle-89" data-name="Simple_triangle" class="cls-25" d="M20.2,16l5.2,5.421H15Z" transform="translate(135.406 23.962)"/>
+    <path id="Simple_triangle-90" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(155.609 34.541) rotate(180)"/>
+    <path id="Simple_triangle-91" data-name="Simple_triangle" class="cls-3" d="M5.2,0l5.2,5.421H0Z" transform="translate(166.014 45.383) rotate(180)"/>
+    <path id="Simple_triangle-92" data-name="Simple_triangle" class="cls-1" d="M19.749,13.045,26.655,19l4.113,9.372L15,21.421Z" transform="translate(187.435 13.121)"/>
+    <path id="Simple_triangle-93" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H1.278Z" transform="translate(212.84 39.962) rotate(180)"/>
+    <path id="Simple_triangle-94" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(177.029 13.121)"/>
+    <path id="Simple_triangle-95" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(202.434 39.962) rotate(180)"/>
+    <path id="Simple_triangle-96" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(166.623 13.121)"/>
+    <path id="Simple_triangle-97" data-name="Simple_triangle" class="cls-4" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 39.962) rotate(180)"/>
+    <path id="Simple_triangle-98" data-name="Simple_triangle" class="cls-4" d="M20.2,16l5.2,5.421H15Z" transform="translate(156.217 13.121)"/>
+    <path id="Simple_triangle-99" data-name="Simple_triangle" class="cls-6" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 39.962) rotate(180)"/>
+    <path id="Simple_triangle-100" data-name="Simple_triangle" class="cls-3" d="M20.2,16l5.2,5.421H15Z" transform="translate(145.812 13.121)"/>
+    <path id="Simple_triangle-101" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(171.217 39.962) rotate(180)"/>
+    <path id="Simple_triangle-102" data-name="Simple_triangle" class="cls-1" d="M7.022.087l3.384,5.334H.86Z" transform="translate(212.84 83.327) rotate(180)"/>
+    <path id="Simple_triangle-103" data-name="Simple_triangle" class="cls-1" d="M18.882,17.122l5.758,4.3H15Z" transform="translate(182.232 7.7)"/>
+    <path id="Simple_triangle-104" data-name="Simple_triangle" class="cls-9" d="M5.2,0l5.2,5.421H1.741Z" transform="translate(207.637 34.541) rotate(180)"/>
+    <path id="Simple_triangle-105" data-name="Simple_triangle" class="cls-8" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 7.7)"/>
+    <path id="Simple_triangle-106" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 34.541) rotate(180)"/>
+    <path id="Simple_triangle-107" data-name="Simple_triangle" class="cls-1" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 7.7)"/>
+    <path id="Simple_triangle-108" data-name="Simple_triangle" class="cls-6" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 34.541) rotate(180)"/>
+    <path id="Simple_triangle-109" data-name="Simple_triangle" class="cls-5" d="M20.2,16l5.2,5.421H15Z" transform="translate(151.015 7.7)"/>
+    <path id="Simple_triangle-110" data-name="Simple_triangle" class="cls-26" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 34.541) rotate(180)"/>
+    <path id="Simple_triangle-111" data-name="Simple_triangle" class="cls-27" d="M20.2,16l5.2,5.421H15Z" transform="translate(125 13.121)"/>
+    <path id="Simple_triangle-112" data-name="Simple_triangle" class="cls-20" d="M20.2,16l5.2,5.421H15Z" transform="translate(125 34.803)"/>
+    <path id="Simple_triangle-113" data-name="Simple_triangle" class="cls-3" d="M5.2,0l5.2,5.421H0Z" transform="translate(166.014 34.541) rotate(180)"/>
+    <path id="Simple_triangle-114" data-name="Simple_triangle" class="cls-28" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 29.121) rotate(180)"/>
+    <path id="Simple_triangle-115" data-name="Simple_triangle" class="cls-3" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 29.121) rotate(180)"/>
+    <path id="Simple_triangle-116" data-name="Simple_triangle" class="cls-29" d="M20.2,16l-1.318,4L15,21.421Z" transform="translate(177.029 67.327)"/>
+    <path id="Simple_triangle-117" data-name="Simple_triangle" class="cls-28" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 23.7) rotate(180)"/>
+    <path id="Simple_triangle-118" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 23.7) rotate(180)"/>
+    <path id="Simple_triangle-119" data-name="Simple_triangle" class="cls-8" d="M20.207,15.971l5.2,5.449H15Z" transform="translate(166.623 2.28)"/>
+    <path id="Simple_triangle-120" data-name="Simple_triangle" class="cls-28" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 29.121) rotate(180)"/>
+    <path id="Simple_triangle-121" data-name="Simple_triangle" class="cls-6" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 29.121) rotate(180)"/>
+    <path id="Simple_triangle-122" data-name="Simple_triangle" class="cls-8" d="M17.723,18.541l5.535,3.732L15,21.421Z" transform="translate(177.029 2.28)"/>
+    <path id="Simple_triangle-123" data-name="Simple_triangle" class="cls-1" d="M5.2,0l5.5,5.479L1.1,4.5Z" transform="translate(202.434 29.121) rotate(180)"/>
+    <path id="Simple_triangle-124" data-name="Simple_triangle" class="cls-7" d="M5.2,0l5.2,5.421L2.011,2.883Z" transform="translate(197.232 23.7) rotate(180)"/>
+    <path id="Simple_triangle-125" data-name="Simple_triangle" class="cls-30" d="M5.2,0l5.2,5.421H0Z" transform="translate(150.406 72.486) rotate(180)"/>
+    <path id="Simple_triangle-126" data-name="Simple_triangle" class="cls-18" d="M5.2,0l5.2,5.421H0Z" transform="translate(181.623 83.327) rotate(180)"/>
+    <path id="Simple_triangle-127" data-name="Simple_triangle" class="cls-2" d="M20.2,16l5.2,5.421H15Z" transform="translate(166.623 56.486)"/>
+    <path id="Simple_triangle-128" data-name="Simple_triangle" class="cls-18" d="M5.2,0l5.2,5.421H0Z" transform="translate(192.029 83.327) rotate(180)"/>
+    <path id="Simple_triangle-129" data-name="Simple_triangle" class="cls-3" d="M20.2,16l5.2,5.421H15Z" transform="translate(177.029 56.486)"/>
+    <path id="Simple_triangle-130" data-name="Simple_triangle" class="cls-8" d="M5.2,0l5.2,5.421H0Z" transform="translate(202.434 83.327) rotate(180)"/>
+    <path id="Simple_triangle-131" data-name="Simple_triangle" class="cls-29" d="M20.2,16l5.2,5.421H15Z" transform="translate(171.826 61.906)"/>
+    <path id="Simple_triangle-132" data-name="Simple_triangle" class="cls-2" d="M5.2,0l5.2,5.421H0Z" transform="translate(197.232 88.748) rotate(180)"/>
+    <path id="Simple_triangle-133" data-name="Simple_triangle" class="cls-18" d="M20.2,16l5.2,5.421H15Z" transform="translate(161.42 61.906)"/>
+    <path id="Simple_triangle-134" data-name="Simple_triangle" class="cls-31" d="M5.2,0l5.2,5.421H0Z" transform="translate(186.826 88.748) rotate(180)"/>
+    <path id="Simple_triangle-135" data-name="Simple_triangle" class="cls-18" d="M5.2,0l5.2,5.421H0Z" transform="translate(176.42 88.748) rotate(180)"/>
+    <path id="Simple_triangle-136" data-name="Simple_triangle" class="cls-32" d="M20.2,16l5.2,5.421H15Z" transform="translate(156.217 67.327)"/>
+    <path id="Simple_triangle-137" data-name="Simple_triangle" class="cls-29" d="M20.2,16l5.2,5.421-10.289.314Z" transform="translate(166.623 67.327)"/>
+    <path id="Simple_triangle-138" data-name="Simple_triangle" class="cls-2" d="M20.2,16l3,4.667h-.207l-8.07.653Z" transform="translate(182.232 61.906)"/>
+    <path id="Simple_triangle-139" data-name="Simple_triangle" class="cls-1" d="M8.008,2.675l2.375,2.919L.831,6.319Z" transform="translate(207.637 88.748) rotate(180)"/>
+    <path id="Path_13" data-name="Path 13" class="cls-1" d="M.635.373s-.358-.228,1.7.59,5.179,1.8,5.179,1.8L4.684,6H-4.723Z" transform="translate(207 72)"/>
+    <path id="Path_14" data-name="Path 14" class="cls-1" d="M.129,0h1.09L2.676,2.679v.3L-1.219,4.1Z" transform="translate(196.936 83.112)"/>
+    <path id="Path_17" data-name="Path 17" class="cls-33" d="M23860.709,213.194c.623,0,1.238-.017,2.158-.048,15.869-.525,25.451-6.558,30.865-14.781,8.008-12.153,5.717-29.288,1.584-37.824-9.631-19.892-39.154-18.086-39.154-18.086" transform="translate(-23679.16 -124.132)"/>
+    <path id="Simple_triangle-140" data-name="Simple_triangle" class="cls-1" d="M16.226,15.317l2.1,5.094-.283.338-2.271-.04Z" transform="translate(233.481 60.405) rotate(179)"/>
+    <path id="Path_18" data-name="Path 18" class="cls-1" d="M0,0H2L3.535,8.025l.377,7.525L0,15,2,9.781Z" transform="translate(216 41)"/>
+    <path id="Path_19" data-name="Path 19" class="cls-1" d="M0,1.189,3.486,3.421h0L2.139,5.611Z" transform="translate(204 23)"/>
+    <path id="Path_20" data-name="Path 20" class="cls-1" d="M1.395,1.663l9.8,3.79L12.311,9.91.785,2.076Z" transform="translate(194 19)"/>
+  </g>
+</svg>
