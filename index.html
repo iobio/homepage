@@ -38,13 +38,15 @@ order: 1
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title" id="exampleModalLongTitle"></h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <div class="col-lg-12">
-          <div class="landing-video">
+        <div class="col-lg-12" id="modalBody">
+          <script type="text/javascript">
+          </script>
+          <div class="landing-video" id="vid">
             <video
             id="MY_VIDEO_1"
             class="video-js vjs-default-skin video-16-9"
@@ -54,7 +56,7 @@ order: 1
             poster="public/images/animation_still_white_bg_small.png"
             width="640" height="264"
           >
-          <source src="https://s3.amazonaws.com/iobio/Al(music).small.mp4" type='video/mp4'>
+          <source id="playerSrc" src="https://s3.amazonaws.com/iobio/Al(music).small.mp4" type='video/mp4'>
           </video>
           </div>
         </div>

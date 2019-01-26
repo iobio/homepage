@@ -78,7 +78,7 @@
     }
 
     .active.center {
-      transform: scale(1);
+      /* transform: scale(1); */
       -webkit-filter: grayscale(0); /* Safari 6.0 - 9.0 */
         filter: grayscale(0);
         filter: blur(0px);
@@ -127,10 +127,10 @@
       background-image: none;
     }
 
-
   </style>
   <!-- tracking code -->
   <script>
+
     function typeOnLoad(){
       console.log($( ".owl-item.active.center" ))
       // var active = $(".owl-carousel").find(".owl-item.active");
@@ -178,6 +178,11 @@
           // }
 
       });
+
+
+      $("#exampleModalCenter").on('hide.bs.modal', function(){
+        $("#MY_VIDEO_1")[0].player.pause();
+      })
 
 
       var typed3 = new Typed('#typed-element', {
