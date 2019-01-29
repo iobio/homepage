@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: support
 title: "Support Us"
 permalink: support.html
 group: "navigation"
@@ -14,10 +14,10 @@ order: 7
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
   <!-- Bootstrap -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"> -->
 
 
-  <link href="public/css/bootstrap-material-design.css" rel="stylesheet">
+  <!-- <link href="public/css/bootstrap-material-design.css" rel="stylesheet"> -->
   <link href="public/css/ripples.min.css" rel="stylesheet">
 
 
@@ -85,7 +85,13 @@ order: 7
         background-color: #2D8FC1;
       }
 
+      .navbar{
+        background-color: linear-gradient(to right, #00c6ff, #0072FE) !important;
+      }
 
+      .hidden{
+        display: none
+      }
    </style>
 </head>
 </head>
@@ -105,8 +111,15 @@ order: 7
   </section> -->
 
   <!-- <div class="container" class="" style=""> -->
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+      <h2><b>IOBIO needs your help</b></h2>
+      <div class="horizontal-underline"></div>
+    </div>
+  </div>
+
   <div class='section'>
-    <div class='section-title'>IOBIO needs your help</div>
+    <!-- <div class='section-title'>IOBIO needs your help</div> -->
     <div class="description" style="width:810px; margin: 20px auto 5px auto;font-size:16px; text-align:justify">
       <p>
       To continue the IOBIO project, we are submitting grant proposals requesting additional funding to continue development of the IOBIO platform, improve and add features to existing apps (with input from you, the community) and build new apps.</p>
@@ -117,84 +130,85 @@ order: 7
     </div>
   </div>
 
-    <!-- Hidden thank you message -->
-    <div id="thank-you-message" class="hidden">
-      <div
-        style="font-size: 18px; width: 400px; margin: 20px auto 0px;"
-        class="alert alert-dismissible alert-info">
+  <!-- Hidden thank you message -->
+  <div id="thank-you-message" class="hidden">
+    <div
+      style="font-size: 18px; width: 400px; margin: 20px auto 0px;"
+      class="alert alert-dismissible alert-info">
 
-        <button type="button" class="close" data-dismiss="alert">X</button>
+      <button type="button" class="close" data-dismiss="alert">X</button>
 
-        Your letter of support for IOBIO has been uploaded.<br>
-        Thank you for your support!
-      </div>
+      Your letter of support for IOBIO has been uploaded.<br>
+      Thank you for your support!
     </div>
+  </div>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8 text-center">
+      <form id="demo-form" role="form"  class="form-horizontal"
+          action="https://getsimpleform.com/messages?form_api_token=30613d4d74978386d35e1dd3774986ba"
+          method="post" enctype="multipart/form-data" >
+
+          <fieldset>
+              <input type="hidden" id="redirect" name="redirect_to" value="">
+              <input type="hidden" name="_folder" value="quotes">
+              <input type="hidden" name="_spam" value="message">
 
 
-    <form id="demo-form" role="form"  class="form-horizontal"
-        action="https://getsimpleform.com/messages?form_api_token=30613d4d74978386d35e1dd3774986ba"
-        method="post" enctype="multipart/form-data" >
-
-        <fieldset>
-            <input type="hidden" id="redirect" name="redirect_to" value="">
-            <input type="hidden" name="_folder" value="quotes">
-            <input type="hidden" name="_spam" value="message">
-
-
-            <div class="form-group is-empty">
-                <label for="inputEmail" class="col-md-3 control-label">Your name</label>
-
-                <div class="col-md-9">
-                  <input type="text" name="name" class="form-control" id="name" placeholder="First and last name">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="inputEmail" class="col-md-3 control-label">Your email</label>
-
-                <div class="col-md-9">
-                  <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
-                </div>
-            </div>
-
-            <div class="form-group">
-               <span class="col-md-3 "></span>
-               <span class="col-md-9"><span class="hint">Here is a</span> <a id="template-link" href="public/doc/support_iobio.doc">simple template</a><span class="hint"> to help you get started.</span></span>
-            </div>
-
-
-            <div class="form-group">
-              <label for="inputFile" class="col-md-3 control-label">Upload your letter of support here</label>
-
-              <div class="col-md-9">
-                <input type="text" readonly="" class="form-control" placeholder="Browse...">
-                <input type="file" name="letter_of_support" id="inputFile" multiple="">
+              <div class="form-group is-empty">
+                  <label for="inputEmail" class="col-md-3 control-label">Your name</label>
+                    <input type="text" name="name" class="form-control" id="name" placeholder="First and last name">
               </div>
-            </div>
 
-            <!--
-            <div class="form-group">
-                <label for="textArea" class="col-md-3 control-label">A message</label>
-
-                <div class="col-md-9">
-                  <textarea class="form-control" name="message" rows="3" id="textArea"></textarea>
-                </div>
-            </div>
-            -->
-
-            <div class="form-group">
-              <span class="col-md-3 "></span>
-
-              <div class="col-md-9">
-                <button type="submit" style="font-size:18px;" class="btn btn-default btn-raised">Submit</button>
+              <div class="form-group">
+                  <label for="inputEmail" class="col-md-3 control-label">Your email</label>
+                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
               </div>
-            </div>
-         </fieldset>
-    </form>
+
+              <div class="form-group">
+                   <span class="hint">Here is a</span> <a id="template-link" href="public/doc/support_iobio.doc">simple template</a><span class="hint"> to help you get started.</span>
+              </div>
+
+
+              <div class="form-group">
+                <label for="inputFile" class=" control-label">Upload your letter of support here</label>
+                <br>
+                <div class="input-group mb-3">
+                  <div class="custom-file">
+                    <input type="file" name"letter_of_support" class="custom-file-input" id="inputFile">
+                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                  </div>
+                </div>
+                  <!-- <input type="file" name="letter_of_support" id="inputFile" multiple=""> -->
+              </div>
+
+              <div class="form-group">
+                <span class="col-md-3 "></span>
+
+                <div class="col-md-12">
+                  <button type="submit" style="font-size:18px;" class="btn btn-sm btn-outline-primary">Submit</button>
+                </div>
+              </div>
+           </fieldset>
+      </form>
+    </div>
+  </div>
+
+
+
+
+
 
   <!-- Request for information on research -->
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+      <h2><b>How do you use IOBIO?</b></h2>
+      <div class="horizontal-underline"></div>
+    </div>
+  </div>
+
+
   <div class='section'>
-    <h1>How do you use IOBIO?</h1>
     <div class="description" style="width:810px; margin: 20px auto 5px auto;font-size:16px; text-align:justify">
         <p>
         In addition to a <span style="font-weight:bold">letter of support</span>, we would love to hear how you use IOBIO in your research. The more information we have, the more we can refine the apps to your needs. If you have any research, blog posts etc. featuring IOBIO that we could use for promotional material for IOBIO, we would really appreciate it! You can <a href="mailto:iobioproject@gmail.com" subject="IOBIO user material">email the IOBIO team</a> (or fill in the form above) with papers, links, or any comments/suggestions that you have to improve IOBIO. We will use this information in IOBIO blog posts, presentations etc. benefitting both the IOBIO project and also your own work.</p>
