@@ -140,18 +140,67 @@
       font-weight: 600;
     }
 
+    .blinking-cursor {
+      font-weight: 400;
+      font-size: 30px;
+      color: #2E3D48;
+      -webkit-animation: 1s blink step-end infinite;
+      -moz-animation: 1s blink step-end infinite;
+      -ms-animation: 1s blink step-end infinite;
+      -o-animation: 1s blink step-end infinite;
+      animation: 1s blink step-end infinite;
+    }
+
+    @keyframes "blink" {
+      from, to {
+        color: transparent;
+      }
+      50% {
+        color: black;
+      }
+    }
+
+    @-moz-keyframes blink {
+      from, to {
+        color: transparent;
+      }
+      50% {
+        color: black;
+      }
+    }
+
+    @-webkit-keyframes "blink" {
+      from, to {
+        color: transparent;
+      }
+      50% {
+        color: black;
+      }
+    }
+
+    @-ms-keyframes "blink" {
+      from, to {
+        color: transparent;
+      }
+      50% {
+        color: black;
+      }
+    }
+
+    @-o-keyframes "blink" {
+      from, to {
+        color: transparent;
+      }
+      50% {
+        color: black;
+      }
+    }
   </style>
   <!-- tracking code -->
   <script>
 
     function typeOnLoad(){
-      console.log($( ".owl-item.active.center" ))
-      // var active = $(".owl-carousel").find(".owl-item.active");
-      // console.log(active.text());
-
       var owl = $(".owl-carousel");
-      // $( ".owl-item.active.center" ).append( "<p id='ActiveSliderContent'></p>" );
-      // $('.owl-stage-outer').before("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center>")
 
       $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><i id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</i></center>")
 
@@ -159,11 +208,6 @@
           var current = property.item.index;
           var src = $(property.target).find(".owl-item").eq(current).find("img").attr('src');
           var idFound = $(property.target).find(".owl-item").eq(current).find("img").attr('id');
-
-          console.log('Image current is ' + src);
-          console.log('Image current id is  ' + idFound);
-
-          console.log("cskk",  $( ".owl-item.active.center" ))
 
           switch (idFound) {
             case "vcf":
@@ -185,17 +229,16 @@
           }
       });
 
-
+      //Hide video when the modal is closed
       $("#exampleModalCenter").on('hide.bs.modal', function(){
         $("#MY_VIDEO_1")[0].player.pause();
       })
-
 
       var typed3 = new Typed('#typed-element', {
         strings: ['Genomic Analysis', 'Variant Interrogation', 'Gene List Generation', 'Alignment Inspector', 'Variant Inspector'],
         typeSpeed: 80,
         // time before typing starts
-		    startDelay: 500,
+		    startDelay: 300,
         // backspacing speed
         backSpeed: 70,
         // time before backspacing
@@ -203,6 +246,7 @@
         smartBackspace: true, // this is a default
         loop: true
       });
+
 
     }
     window.onload = typeOnLoad;
