@@ -43,10 +43,10 @@ order: 7
           color:  #2d8fc1 !important;
       }
 
-      .form-group {
+      /* .form-group {
           padding-bottom: 0px;
           margin: 22px 0px 0px;
-      }
+      } */
 
       /* .form-group.is-focused .form-control {
           background-image: linear-gradient(#80A769, #6BB340), linear-gradient(#D2D2D2, #D2D2D2);
@@ -157,12 +157,12 @@ order: 7
 
               <div class="form-group is-empty">
                   <label for="inputEmail" class="col-md-3 control-label">Your name</label>
-                    <input type="text" name="name" class="form-control" id="name" placeholder="First and last name">
+                    <input type="text" name="name" class="form-control" id="name" placeholder="First and last name" required>
               </div>
 
               <div class="form-group">
                   <label for="inputEmail" class="col-md-3 control-label">Your email</label>
-                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email">
+                    <input type="email" name="email" class="form-control" id="inputEmail" placeholder="Email" required>
               </div>
 
               <div class="form-group">
@@ -171,13 +171,22 @@ order: 7
 
 
               <div class="form-group">
-                <label for="inputFile" class=" control-label">Upload your letter of support here</label>
+                <!-- <label for="inputFile" class=" control-label">Upload your letter of support here</label>
+                -->
                 <br>
                 <div class="input-group mb-3">
                   <div class="custom-file">
-                    <input type="file" name"letter_of_support" class="custom-file-input" id="inputFile">
-                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                    <input type="file" name"letter_of_support" class="custom-file-input" id="inputFile" required>
+                    <label class="custom-file-label" for="inputFile">Choose file to upload your letter of support</label>
                   </div>
+                  <script>
+                      $('#inputFile').on('change',function(){
+                          var fileName = $(this).val();
+                          var cleanFileName = fileName.replace('C:\\fakepath\\', " ");
+                          $(this).next('.custom-file-label').html(cleanFileName);
+                      })
+                  </script>
+
                 </div>
                   <!-- <input type="file" name="letter_of_support" id="inputFile" multiple=""> -->
               </div>
