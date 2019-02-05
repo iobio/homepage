@@ -65,12 +65,12 @@
 
 .owl-carousel .owl-nav .owl-prev::before {
   /* content: "" !important; */
-  content: "<";
+  content: "<" !important;
 }
 
 .owl-carousel .owl-nav .owl-next::before {
   /* content: "" !important; */
-  content: ">";
+  content: ">" !important;
 }
 
 .btn-outline-light{
