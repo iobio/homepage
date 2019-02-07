@@ -52,7 +52,7 @@
 
 #BeforeActiveSliderContent{
   color: #0073ff;
-  font-size: 25px;
+  font-size: 26px;
   margin-top: 10px;
   font-weight: 600;
   /* text-shadow: 1px 1px 1px #797979; */
@@ -171,6 +171,10 @@
   }
 }
 
+#footerSubscribeForm {
+  margin-left:60px;
+}
+
 @media only screen and (max-width: 414px) {
   .footerSubscribbeBox {
     width: 100% !important
@@ -178,6 +182,9 @@
   .footerSubscribbeBoxButton {
     width: 100% !important;
     margin-top: 10px !important;
+  }
+  #footerSubscribeForm {
+    margin-left: 0;
   }
 }
 
