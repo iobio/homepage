@@ -9,7 +9,8 @@ order: 1
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-lg-10 text-white text-center">
-        <h1 class="font-weight-light">Real-time <b id="typed-element"></b> </h1>
+        <h1 id="firstTypedElement" class="font-weight-light">Real-time <b id="typed-element-first"></b> </h1>
+        <h1 style="display:none" id="SecondTypedElement" class="font-weight-light">Real-time <b id="typed-element"></b> </h1>
       </div>
       <div class="col-lg-7 text-center">
         <p style="font-size: 20px; color:rgba(255, 255, 255, 0.75)">
@@ -23,6 +24,21 @@ order: 1
     </div>
   </div>
 </section>
+
+<script type="text/javascript">
+
+  $('.playSlider').on('click',function(){
+    var owl = $(".owl-carousel");
+      console.log("Hello from owl carousel")
+      owl.trigger('play.owl.autoplay')
+  })
+
+  function AutoplaySlider(){
+    var owl = $(".owl-carousel");
+    console.log("Hello from owl carousel")
+    owl.trigger('play.owl.autoplay')
+  }
+</script>
 
 <!-- Modal -->
 <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -59,14 +75,13 @@ order: 1
   </div>
 </div>
 
-
 <section class="half bg-primary">
   <div class="half-bg bg-light pb-10">
   </div>
   <div class="container-full mb-10">
     <div class="row gutter-0 justify-content-center">
       <div style="margin-top:-10px" class="col-12">
-        <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[2,2,1]" data-center="true" data-nav="true" data-margin="40" data-loop="true" data-dots="true"	data-autoplay="true"  data-autoplay-timeout="7000" data-autoplay-speed="7000">
+        <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[2,2,1]" data-center="true" data-nav="true" data-margin="40" data-loop="true" data-dots="true"	 data-autoplay-timeout="7000" data-autoplay-speed="7000">
         <!-- <div class="owl-carousel owl-carousel-showcase owl-carousel-fluid" data-items="[3,2,1]" data-center="true" data-nav="true" data-margin="20" data-loop="true" data-dots="true"> -->
           <div  class="card card-showcase lift" >
             <a href="https://vcf.iobio.io/?species=Human" target="_blank">

@@ -77,16 +77,45 @@
       })
 
       var typed3 = new Typed('#typed-element', {
-        strings: ['Genomic Analysis', 'Variant Interrogation', 'Gene List Generation', 'Alignment Inspector', 'Variant Inspector'],
+        strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
         typeSpeed: 80,
         // time before typing starts
-		    startDelay: 300,
+		    startDelay: 6500,
+        // backspacing speed
+        backSpeed: 55,
+        // time before backspacing
+		    backDelay: 3200,
+        smartBackspace: false, // this is a default
+        loop: true
+      });
+
+      var typed1 = new Typed('#typed-element-first', {
+        strings: ['Genomic Analysis' ],
+        typeSpeed: 80,
+        // time before typing starts
+		    startDelay: 1000,
         // backspacing speed
         backSpeed: 70,
         // time before backspacing
-		    backDelay: 1500,
-        smartBackspace: true, // this is a default
-        loop: true
+		    backDelay: 1000,
+        smartBackspace: false, // this is a default
+        loop: false,
+        onComplete: function(self) {
+          // prettyLog('onCmplete ' + self)
+          setTimeout(function(){
+            console.log("Hello");
+            var element =  document.querySelector('#firstTypedElement')
+            element.classList.add('animated', 'fadeOut');
+            element.addEventListener('animationend', function() {
+              document.querySelector("#SecondTypedElement").style.display = "block";
+              AutoplaySlider();
+              document.querySelector("#firstTypedElement").style.display = "none";
+            })
+          }, 2000)
+
+
+
+        }
       });
 
 
