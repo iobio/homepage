@@ -211,6 +211,15 @@
   }
 }
 
+.sponsors-img{
+  width:200px;
+  height:150px;
+
+/*Scale down will take the necessary specified space that is 100px x 100px without stretching the image*/
+ object-fit:scale-down;
+
+}
+
 /*
  * Developer page
  *
