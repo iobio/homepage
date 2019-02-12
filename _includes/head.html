@@ -42,6 +42,16 @@
   <script>
 
     function typeOnLoad(){
+      $(".owl-nav").click(function(){
+        // console.log("next button clicked");
+        // console.log("type 3 ", typed3.options.preStringTyped);
+          typed3.options.preStringTyped();
+        // typed3.options.preStringTyped =  function(pos, self) {
+        //   // console.log('preStringTyped ' ,self);
+        //   self.arrayPos = self.arrayPos+1;
+        //  },
+      })
+
       var owl = $(".owl-carousel");
 
       $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><i id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</i></center>")
@@ -106,10 +116,9 @@
 
     }
     window.onload = typeOnLoad;
-
+    var typed3;
     function startNewTyping(){
-      console.log("startNewTyping")
-      var typed3 = new Typed('#typed-element', {
+       typed3 = new Typed('#typed-element', {
         strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
         typeSpeed: 80,
         // time before typing starts
@@ -119,8 +128,20 @@
         // time before backspacing
         backDelay: 3200,
         smartBackspace: false, // this is a default
-        loop: true
+        loop: true,
+        onComplete: function(self){
+        },
+        preStringTyped: function(pos, self) {
+          // console.log("called")
+          // console.log('preStringTyped ' ,self);
+          // self.arrayPos = self.arrayPos+1;
+         },
+        onStringTyped: function(pos, self) {
+          // console.log('onStringTyped ' + pos + ' ' + self)
+         },
+
       });
+
     }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
