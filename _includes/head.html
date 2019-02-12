@@ -76,18 +76,6 @@
         $("#MY_VIDEO_1")[0].player.pause();
       })
 
-      var typed3 = new Typed('#typed-element', {
-        strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
-        typeSpeed: 80,
-        // time before typing starts
-		    startDelay: 6500,
-        // backspacing speed
-        backSpeed: 55,
-        // time before backspacing
-		    backDelay: 3200,
-        smartBackspace: false, // this is a default
-        loop: true
-      });
 
       var typed1 = new Typed('#typed-element-first', {
         strings: ['Genomic Analysis' ],
@@ -103,24 +91,37 @@
         onComplete: function(self) {
           // prettyLog('onCmplete ' + self)
           setTimeout(function(){
-            console.log("Hello");
             var element =  document.querySelector('#firstTypedElement')
             element.classList.add('animated', 'fadeOut');
             element.addEventListener('animationend', function() {
               document.querySelector("#SecondTypedElement").style.display = "block";
               AutoplaySlider();
+              startNewTyping();
               document.querySelector("#firstTypedElement").style.display = "none";
             })
           }, 2000)
 
-
-
         }
       });
 
-
     }
     window.onload = typeOnLoad;
+
+    function startNewTyping(){
+      console.log("startNewTyping")
+      var typed3 = new Typed('#typed-element', {
+        strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
+        typeSpeed: 80,
+        // time before typing starts
+        startDelay: 500,
+        // backspacing speed
+        backSpeed: 55,
+        // time before backspacing
+        backDelay: 3200,
+        smartBackspace: false, // this is a default
+        loop: true
+      });
+    }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
