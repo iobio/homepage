@@ -4,6 +4,12 @@
   background: linear-gradient(to right, #00c6ff, #0072ff) !important; /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+.btn-app-primary {
+    color: #fff;
+    background-color: #04a1ff;
+    border-color: #04a1ff;
+}
+
 .avatar-headshot{
   margin-bottom: -150px;
   margin-top: -50px;
