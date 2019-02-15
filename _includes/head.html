@@ -42,39 +42,6 @@
   <script>
 
     function typeOnLoad(){
-      $(".owl-nav").click(function(){
-        // console.log("next button clicked");
-        // console.log("type 3 ", typed3.options.preStringTyped);
-        // console.log("typed3" , typed3.arrayPos)
-        // console.log("stringPos ", stringPos)
-        // typed3.destroy();
-        // typed3.backDelay = 0;
-        // typed3.backSpeed = 0;
-        // typed3.stop();
-        setTimeout(function(){
-          console.log("start")
-          // typed3.arrayPos = typed3.arrayPos+1;
-          // typed3.start();
-          // typed3.backDelay = 3200;
-          // typed3.backSpeed = 55;
-        },2000)
-        // typed3.arrayPos = typed3.arrayPos+1;
-        // typed3.backDelay = 0;
-        // typed3.backSpeed = 0;
-        // typed3.typeSpeed = 0;
-
-        // setTimeout(function(){
-        //   typed3.backDelay = 3200;
-        //   typed3.backSpeed = 55;
-        //   typed3.typeSpeed = 80;
-        // },500)
-        //
-          // typed3.options.preStringTyped();
-        // typed3.options.preStringTyped =  function(pos, self) {
-        //   // console.log('preStringTyped ' ,self);
-        //   self.arrayPos = self.arrayPos+1;
-        //  },
-      })
 
       var owl = $(".owl-carousel");
 
@@ -87,18 +54,22 @@
 
           switch (idFound) {
             case "vcf":
+              typedDefault();
               document.getElementById('BeforeActiveSliderContent').innerHTML = "vcf.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics"
               break;
             case "genepanel":
+              typeGenepanel();
               document.getElementById('BeforeActiveSliderContent').innerHTML = "genepanel.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A web app for generating list of genes based on suspected conditions and phenotypes"
               break;
             case "gene":
+              typeGene();
               document.getElementById('BeforeActiveSliderContent').innerHTML = "gene.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A web app for investigating potential disease-causing variants"
               break;
             case "bam":
+              typeBAM();
               document.getElementById('BeforeActiveSliderContent').innerHTML = "bam.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics"
               break;
@@ -114,34 +85,7 @@
       document.querySelector("#SecondTypedElement").style.display = "block";
       document.querySelector("#firstTypedElement").style.display = "none";
       AutoplaySlider();
-      startNewTyping();
-      // var typed1 = new Typed('#typed-element-first', {
-      //   strings: ['Genomic Analysis' ],
-      //   typeSpeed: 80,
-      //   // time before typing starts
-		  //   startDelay: 1000,
-      //   // backspacing speed
-      //   backSpeed: 70,
-      //   // time before backspacing
-		  //   backDelay: 1000,
-      //   smartBackspace: false, // this is a default
-      //   loop: false,
-      //   onComplete: function(self) {
-      //     // prettyLog('onCmplete ' + self)
-      //     setTimeout(function(){
-      //       var element =  document.querySelector('#firstTypedElement')
-      //       element.classList.add('animated', 'fadeOut');
-      //       element.addEventListener('animationend', function() {
-      //         document.querySelector("#SecondTypedElement").style.display = "block";
-      //         AutoplaySlider();
-      //         startNewTyping();
-      //         document.querySelector("#firstTypedElement").style.display = "none";
-      //       })
-      //     }, 2000)
-      //
-      //   }
-      // });
-
+      typedDefault();
     }
     window.onload = typeOnLoad;
     var typed3;
@@ -174,6 +118,117 @@
 
       });
 
+    }
+
+    var typedDefaultEl;
+    var typedVCF;
+    var typedBAM;
+    var typedGene;
+    var typedGenepanel;
+
+    function typedDefault(){
+      console.log("typedDefault called")
+      console.log("typedBAM", typedBAM)
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+      }
+      if(typedGene!==undefined){
+        typedGene.destroy();
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+      }
+      typedDefaultEl = new Typed('#typed-element', {
+       strings: [' VARIANT INSPECTION' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+
+    function typeGene(){
+      console.log("typeGene called");
+      // typedDefaultEl.destroy();
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+      }
+      typedGene = new Typed('#typed-element', {
+       strings: [' Variant Interrogation' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+    function typeGenepanel(){
+      console.log("typeGenepanel called")
+      // typedGene.destroy();
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+      }
+      if(typedGene!==undefined){
+        typedGene.destroy();
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+      }
+       typedGenepanel = new Typed('#typed-element', {
+       strings: [' Gene List Generation' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+    function typeBAM(){
+      console.log("typeBam called")
+      // typedGenepanel.destroy();
+      if(typedGene!==undefined){
+        typedGene.destroy();
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+      }
+       typedBAM = new Typed('#typed-element', {
+       strings: [' ALIGNMENT INSPECTION' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
     }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
