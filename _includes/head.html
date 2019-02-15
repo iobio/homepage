@@ -45,7 +45,31 @@
       $(".owl-nav").click(function(){
         // console.log("next button clicked");
         // console.log("type 3 ", typed3.options.preStringTyped);
-          typed3.options.preStringTyped();
+        // console.log("typed3" , typed3.arrayPos)
+        // console.log("stringPos ", stringPos)
+        // typed3.destroy();
+        // typed3.backDelay = 0;
+        // typed3.backSpeed = 0;
+        // typed3.stop();
+        setTimeout(function(){
+          console.log("start")
+          // typed3.arrayPos = typed3.arrayPos+1;
+          // typed3.start();
+          // typed3.backDelay = 3200;
+          // typed3.backSpeed = 55;
+        },2000)
+        // typed3.arrayPos = typed3.arrayPos+1;
+        // typed3.backDelay = 0;
+        // typed3.backSpeed = 0;
+        // typed3.typeSpeed = 0;
+
+        // setTimeout(function(){
+        //   typed3.backDelay = 3200;
+        //   typed3.backSpeed = 55;
+        //   typed3.typeSpeed = 80;
+        // },500)
+        //
+          // typed3.options.preStringTyped();
         // typed3.options.preStringTyped =  function(pos, self) {
         //   // console.log('preStringTyped ' ,self);
         //   self.arrayPos = self.arrayPos+1;
@@ -87,36 +111,41 @@
       })
 
 
-      var typed1 = new Typed('#typed-element-first', {
-        strings: ['Genomic Analysis' ],
-        typeSpeed: 80,
-        // time before typing starts
-		    startDelay: 1000,
-        // backspacing speed
-        backSpeed: 70,
-        // time before backspacing
-		    backDelay: 1000,
-        smartBackspace: false, // this is a default
-        loop: false,
-        onComplete: function(self) {
-          // prettyLog('onCmplete ' + self)
-          setTimeout(function(){
-            var element =  document.querySelector('#firstTypedElement')
-            element.classList.add('animated', 'fadeOut');
-            element.addEventListener('animationend', function() {
-              document.querySelector("#SecondTypedElement").style.display = "block";
-              AutoplaySlider();
-              startNewTyping();
-              document.querySelector("#firstTypedElement").style.display = "none";
-            })
-          }, 2000)
-
-        }
-      });
+      document.querySelector("#SecondTypedElement").style.display = "block";
+      document.querySelector("#firstTypedElement").style.display = "none";
+      AutoplaySlider();
+      startNewTyping();
+      // var typed1 = new Typed('#typed-element-first', {
+      //   strings: ['Genomic Analysis' ],
+      //   typeSpeed: 80,
+      //   // time before typing starts
+		  //   startDelay: 1000,
+      //   // backspacing speed
+      //   backSpeed: 70,
+      //   // time before backspacing
+		  //   backDelay: 1000,
+      //   smartBackspace: false, // this is a default
+      //   loop: false,
+      //   onComplete: function(self) {
+      //     // prettyLog('onCmplete ' + self)
+      //     setTimeout(function(){
+      //       var element =  document.querySelector('#firstTypedElement')
+      //       element.classList.add('animated', 'fadeOut');
+      //       element.addEventListener('animationend', function() {
+      //         document.querySelector("#SecondTypedElement").style.display = "block";
+      //         AutoplaySlider();
+      //         startNewTyping();
+      //         document.querySelector("#firstTypedElement").style.display = "none";
+      //       })
+      //     }, 2000)
+      //
+      //   }
+      // });
 
     }
     window.onload = typeOnLoad;
     var typed3;
+    var stringPos = 0;
     function startNewTyping(){
        typed3 = new Typed('#typed-element', {
         strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
@@ -133,11 +162,14 @@
         },
         preStringTyped: function(pos, self) {
           // console.log("called")
-          // console.log('preStringTyped ' ,self);
+          console.log('preStringTyped ' ,self + " and pos is ", pos);
           // self.arrayPos = self.arrayPos+1;
          },
         onStringTyped: function(pos, self) {
           // console.log('onStringTyped ' + pos + ' ' + self)
+          console.log("Typing complete");
+          stringPos++;
+
          },
 
       });

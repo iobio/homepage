@@ -10,6 +10,10 @@
     border-color: #04a1ff;
 }
 
+.apps-subnav:hover{
+  color: #04a1ff !important
+}
+
 .avatar-headshot{
   margin-bottom: -150px;
   margin-top: -50px;
