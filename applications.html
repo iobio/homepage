@@ -64,11 +64,9 @@ order: 2
                     <h2 class="card-title"> gene.iobio.io </h2>
                   </a>
                   <br>
-                  <p class="card-text" style="font-size:18px">A web app for investigating potential disease-causing variants
-                    <br>
-                    Analyze Genomic Variantsin Real-time
+                  <p class="card-text" style="font-size:18px">A web app for investigating potential disease-causing variants in real-time.
                   </p>
-                  <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <button data-toggle="modal" data-target="#geneModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
                   <button class="btn btn-app-primary btn-sm">Get Started</button>
                 </div>
                 </div>
@@ -92,7 +90,7 @@ order: 2
                   <p class="card-text" style="font-size:18px">
                     A web app for generating list of genes based on suspected conditions and phenotypes.
                   </p>
-                  <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <button data-toggle="modal" data-target="#genepanelModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
                   <button class="btn btn-app-primary btn-sm">Get Started</button>
                 </div>
                 </div>
@@ -131,7 +129,7 @@ order: 2
                   <p class="card-text" style="font-size:18px">
                     An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics
                   </p>
-                  <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <button data-toggle="modal" data-target="#bamModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
                   <button class="btn btn-app-primary btn-sm">Get Started</button>
                 </div>
                 </div>
@@ -198,5 +196,136 @@ order: 2
         </div>
     </aside>
 
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="geneModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">gene.iobio</h5>
+        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          Gene.iobio provides variant prioritization and interrogation for research investigation and discovery in real-time using informative and engaging visualizations.
+          <p></p>
+          <p>
+            <strong>
+              Workflow:
+            </strong>
+            <ul>
+              <li>Search on a gene or a phenotype</li>
+              <li>Gene by gene, variants, and coverage are being analyzed on powerful IOBIO servers</li>
+              <li>Click on a gene and visualize the variants, colored by the impact. See coverage levels across the gene</li>
+              <li>As genes are analyzed, filters are pinpointing variants for closer examination. Customize the filters and the variants are instantly reassessed</li>
+              <li>Review each filtered variant to assess pathogenicity and association with known phenotypes</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <strong>
+              Videos:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=EW2Sm4HEAPg">Multi-gene analysis</a></li>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=dnq8HtthDgU">Coverage analysis</a></li>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=6T8DkrJWd6w">Saving your analysis</a></li>
+            </ul>
+          </p>
+          <p>
+            <strong>
+              Blog posts:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="http://iobio.io/2017/09/27/loading-data/">Loading your data</a></li>
+              <li><a target="_blank" href="http://iobio.io/2018/07/20/gene_3.0/">gene.iobio 3.0</a></li>
+              <li><a target="_blank" href="http://iobio.io/2017/09/29/gene_2.5.0/">ClinVar variants, gnomAD, affected status</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="genepanelModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">genepanel.iobio</h5>
+        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          Genepanel.iobio generates comprehensive gene lists, leveraging multiple genetics research community resources; including commercially-available gene panel tests and phenotype term-driven gene list generation tools.
+          <p></p>
+          <p>
+            There are three main resources in Genepanel.iobio:
+            <ul>
+              <li>Genetic Testing Registry: Allows to compile a gene list for suspected conditions</li>
+              <li>Phenolyzer: Generates a gene list for suspected phenotypes</li>
+              <li>Add Genes: Provides an option to add a suspected genes</li>
+            </ul>
+          </p>
+          <p></p>
+          Results from all these resources are propagated to the Summary page, which is a comprehensive gene list for the suspected condition and its associated phenotypes, along with the manually added genes.
+          <p></p>
+          <p>
+            <strong>
+              Links:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="http://iobio.io/user_guides/2018/10/28/how-to-use-gtr/">How to Use Genetic Testing Registry </a></li>
+              <li><a target="_blank" href="http://iobio.io/user_guides/2018/10/27/how-to-use-phenolyzer/">How to Use Phenolyzer </a></li>
+              <li><a target="_blank" href="http://iobio.io/2018/11/19/genepanel.iobio-released/">Genepanel.iobio released</a></li>
+            </ul>
+          </p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="bamModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">bam.iobio</h5>
+        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          <p>
+            bam.iobio provides 3 primary statistics:
+            <ul>
+              <li>Estimated read coverage is shown linearly across the genome</li>
+              <li>Read coverage distribution</li>
+              <li>Fragment length distribution</li>
+            </ul>
+          </p>
+          <p></p>
+The dashboard can be zoomed to show statistics for a single chromosome at a time. The app works for both BAM and CRAM format files. Files will normally be processed by providing a URL to the app, but local files may also be used.
+          <p></p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
   </div>
 </div>
