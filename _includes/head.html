@@ -96,6 +96,17 @@
       document.querySelector("#firstTypedElement").style.display = "none";
       AutoplaySlider();
       typedDefault();
+      console.log(sessionStorage.getItem('notificationShown'));
+      var notificationBarSet = sessionStorage.getItem('notificationShown');
+      if(notificationBarSet!== null){
+        //Do not show notification
+      }
+      else {
+        //Show notification bar and set session storage
+        setNotificationBarSession();
+        document.querySelector('#notification-bar').style.display = 'block';
+        document.querySelector('#header-bar').style.top = '56px';
+      }
     }
     window.onload = typeOnLoad;
     var typed3;
@@ -239,6 +250,11 @@
        smartBackspace: false, // this is a default
        loop: false
      });
+    }
+
+    function setNotificationBarSession(){
+      console.log("setNotificationBarSession");
+      sessionStorage.setItem('notificationShown', true);
     }
 
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
