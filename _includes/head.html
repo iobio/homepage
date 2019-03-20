@@ -56,22 +56,30 @@
 
           switch (idFound) {
             case "vcf":
-              typedDefault();
+              if(typedDefaultEl===undefined){
+                typedDefault();
+              }
               document.getElementById('BeforeActiveSliderContent').innerHTML = "vcf.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics"
               break;
             case "genepanel":
-              typeGenepanel();
+              if(typedGenepanel===undefined){
+                typeGenepanel();
+              }
               document.getElementById('BeforeActiveSliderContent').innerHTML = "genepanel.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A web app for generating list of genes based on suspected conditions and phenotypes"
               break;
             case "gene":
-              typeGene();
+              if(typedGene===undefined){
+                typeGene();
+              }
               document.getElementById('BeforeActiveSliderContent').innerHTML = "gene.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A web app for investigating potential disease-causing variants"
               break;
             case "bam":
-              typeBAM();
+              if(typedBAM===undefined){
+                typeBAM();
+              }
               document.getElementById('BeforeActiveSliderContent').innerHTML = "bam.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics"
               break;
