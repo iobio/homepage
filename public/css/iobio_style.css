@@ -59,6 +59,10 @@
   height: 100px
 }
 
+.aside-link-term{
+  font-size: 1.1rem !important;
+  font-weight: 500 !important;
+}
 
 #BeforeActiveSliderContent{
   color: #0073ff;
@@ -210,7 +214,7 @@
 }
 
 #header-bar{
-  top: 56px;
+  top: 0;
 }
 @media only screen and (max-width: 1000px) {
   #notification-bar {

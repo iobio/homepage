@@ -39,6 +39,8 @@
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
 
   <!-- tracking code -->
   <script>
@@ -100,6 +102,7 @@
       var notificationBarSet = sessionStorage.getItem('notificationShown');
       if(notificationBarSet!== null){
         //Do not show notification
+        document.querySelector('#header-bar').style.top = '0';
       }
       else {
         //Show notification bar and set session storage
