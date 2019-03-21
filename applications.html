@@ -160,7 +160,7 @@ order: 2
                     <br>
                   </p>
                   <a href="https://github.com/iobio/vcf.iobio.io" target="_blank"><button class="btn btn-outline-dark btn-sm"><i class="fab fa-github fa-lg"></i> &nbsp; GitHub</button></a>
-                  <button class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <button data-toggle="modal" data-target="#vcfModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
                   <a href="http://vcf.iobio.io" target="_blank"><button class="btn btn-app-primary btn-sm">Get Started</button></a>
                 </div>
                 </div>
@@ -212,7 +212,7 @@ order: 2
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">gene.iobio</h5>
-        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -267,7 +267,7 @@ order: 2
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">genepanel.iobio</h5>
-        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
@@ -311,14 +311,14 @@ order: 2
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">bam.iobio</h5>
-        <button onclick="StopVideo()" type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
         <div class="col-lg-12" >
           <p>
-            bam.iobio provides 3 primary statistics:
+            Bam.iobio provides 3 primary statistics:
             <ul>
               <li>Estimated read coverage is shown linearly across the genome</li>
               <li>Read coverage distribution</li>
@@ -327,6 +327,37 @@ order: 2
           </p>
           <p></p>
 The dashboard can be zoomed to show statistics for a single chromosome at a time. The app works for both BAM and CRAM format files. Files will normally be processed by providing a URL to the app, but local files may also be used.
+          <p></p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="vcfModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">vcf.iobio</h5>
+        <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          <p>
+            vcf.iobio shows high level variant calling (VCF) metrics in real time. Including:
+            <ul>
+              <li>Variant density - number of variant calls across all autosomes and sex chromosomes</li>
+              <li>Ts/Tv ratio - ratio of transitions to transversions</li>
+              <li>Base changes - A>G/C/T, G>A/C/T, C>A/G/T, T>A/G/C</li>
+              <li>Variant types - SNPs, insertions, deletions</li>
+            </ul>
+          </p>
           <p></p>
 
         </div>
