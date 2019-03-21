@@ -155,12 +155,15 @@
       console.log("typedBAM", typedBAM)
       if(typedBAM!==undefined){
         typedBAM.destroy();
+        typedBAM = undefined;
       }
       if(typedGene!==undefined){
         typedGene.destroy();
+        typedGene = undefined;
       }
       if(typedGenepanel!==undefined){
         typedGenepanel.destroy();
+        typedGenepanel = undefined;
       }
       typedDefaultEl = new Typed('#typed-element', {
        strings: [' VARIANT INSPECTION' ],
@@ -182,12 +185,15 @@
       // typedDefaultEl.destroy();
       if(typedBAM!==undefined){
         typedBAM.destroy();
+        typedBAM = undefined;
       }
       if(typedGenepanel!==undefined){
         typedGenepanel.destroy();
+        typedGenepanel = undefined;
       }
       if(typedDefaultEl!==undefined){
         typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
       }
       typedGene = new Typed('#typed-element', {
        strings: [' Variant Interrogation' ],
@@ -208,12 +214,15 @@
       // typedGene.destroy();
       if(typedBAM!==undefined){
         typedBAM.destroy();
+        typedBAM = undefined;
       }
       if(typedGene!==undefined){
         typedGene.destroy();
+        typedGene = undefined;
       }
       if(typedDefaultEl!==undefined){
         typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
       }
        typedGenepanel = new Typed('#typed-element', {
        strings: [' Gene List Generation' ],
@@ -234,12 +243,15 @@
       // typedGenepanel.destroy();
       if(typedGene!==undefined){
         typedGene.destroy();
+        typedGene = undefined;
       }
       if(typedGenepanel!==undefined){
         typedGenepanel.destroy();
+        typedGenepanel = undefined;
       }
       if(typedDefaultEl!==undefined){
         typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
       }
        typedBAM = new Typed('#typed-element', {
        strings: [' ALIGNMENT INSPECTION' ],
