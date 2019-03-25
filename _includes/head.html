@@ -17,6 +17,8 @@
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/lanyon.css">
   <link rel="stylesheet" href="/public/css/iobio_style.css">
+  <!-- <link rel="stylesheet" href="/public/css/vendor.css">
+  <link rel="stylesheet" href="/public/css/style.css"> -->
   <link rel="stylesheet" href="https://guidebook.webuildthemes.com/assets/css/vendor.css" />
   <link rel="stylesheet" href="https://guidebook.webuildthemes.com/assets/css/style.css" />
   <link rel="stylesheet" type="text/css" href="http://iobio.io/public/css/iobio.viz.min.css">
@@ -27,6 +29,8 @@
 
 
   <!-- JS -->
+  <!-- <script src="/public/js/vendor.min.js"></script>
+  <script src="/public/js/app.js"></script> -->
   <script src="https://guidebook.webuildthemes.com/assets/js/vendor.min.js"></script>
   <script src="https://guidebook.webuildthemes.com/assets/js/app.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
@@ -98,7 +102,6 @@
       document.querySelector("#firstTypedElement").style.display = "none";
       AutoplaySlider();
       typeBAM();
-      console.log(sessionStorage.getItem('notificationShown'));
       var notificationBarSet = sessionStorage.getItem('notificationShown');
       if(notificationBarSet!== null){
         //Do not show notification
@@ -129,15 +132,9 @@
         onComplete: function(self){
         },
         preStringTyped: function(pos, self) {
-          // console.log("called")
-          console.log('preStringTyped ' ,self + " and pos is ", pos);
-          // self.arrayPos = self.arrayPos+1;
          },
         onStringTyped: function(pos, self) {
-          // console.log('onStringTyped ' + pos + ' ' + self)
-          console.log("Typing complete");
           stringPos++;
-
          },
 
       });
@@ -151,8 +148,6 @@
     var typedGenepanel;
 
     function typedDefault(){
-      console.log("typedDefault called")
-      console.log("typedBAM", typedBAM)
       if(typedBAM!==undefined){
         typedBAM.destroy();
         typedBAM = undefined;
@@ -181,8 +176,6 @@
 
 
     function typeGene(){
-      console.log("typeGene called");
-      // typedDefaultEl.destroy();
       if(typedBAM!==undefined){
         typedBAM.destroy();
         typedBAM = undefined;
@@ -210,8 +203,6 @@
     }
 
     function typeGenepanel(){
-      console.log("typeGenepanel called")
-      // typedGene.destroy();
       if(typedBAM!==undefined){
         typedBAM.destroy();
         typedBAM = undefined;
@@ -239,8 +230,6 @@
     }
 
     function typeBAM(){
-      console.log("typeBam called")
-      // typedGenepanel.destroy();
       if(typedGene!==undefined){
         typedGene.destroy();
         typedGene = undefined;
@@ -268,7 +257,6 @@
     }
 
     function setNotificationBarSession(){
-      console.log("setNotificationBarSession");
       sessionStorage.setItem('notificationShown', true);
     }
 

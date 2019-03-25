@@ -51,35 +51,6 @@ function typeOnLoad(){
 
 
 $(".owl-nav").click(function(){
-  // console.log("next button clicked");
-  // console.log("type 3 ", typed3.options.preStringTyped);
-  // console.log("typed3" , typed3.arrayPos)
-  // console.log("stringPos ", stringPos)
-  // typed3.destroy();
-  // typed3.backDelay = 0;
-  // typed3.backSpeed = 0;
-  // typed3.stop();
   setTimeout(function(){
-    console.log("start")
-    // typed3.arrayPos = typed3.arrayPos+1;
-    // typed3.start();
-    // typed3.backDelay = 3200;
-    // typed3.backSpeed = 55;
   },2000)
-  // typed3.arrayPos = typed3.arrayPos+1;
-  // typed3.backDelay = 0;
-  // typed3.backSpeed = 0;
-  // typed3.typeSpeed = 0;
-
-  // setTimeout(function(){
-  //   typed3.backDelay = 3200;
-  //   typed3.backSpeed = 55;
-  //   typed3.typeSpeed = 80;
-  // },500)
-  //
-    // typed3.options.preStringTyped();
-  // typed3.options.preStringTyped =  function(pos, self) {
-  //   // console.log('preStringTyped ' ,self);
-  //   self.arrayPos = self.arrayPos+1;
-  //  },
 })
