@@ -12,10 +12,17 @@ permalink: developer.html
 <div id='developer'>
 
   <div class='section'>
-    <div style="font-style: italic; font-size: 11px; margin-bottom: 20px">Disclaimer
+    <div style="font-style: italic; font-size: 14px; margin-bottom: 20px">Disclaimer
       This is an Alpha release. There may be bugs and the api may change moving forward. Thats the downside, the upside is that it's a great time to improve the library with community help and feedback . If you'd like to contribute please feel free to jump in and/or post <a href='http://github.com/iobio/'>issues/features</a> on github.
     </div>
-    <div class='section-title'>About IOBIO</div>
+    <div class="bg-white" style="padding-bottom:20px; margin-top:50px">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <h2><b>About IOBIO</b></h2>
+          <div class="horizontal-underline"></div>
+        </div>
+      </div>
+    </div>
       It's useful to get an overview of the development philosophy and how iobio is organized before building an app, so that all the pieces you'll need to interact with make sense.
     <div class='sub-section'>
       <div class='section-title'>How it works</div>
@@ -29,40 +36,62 @@ permalink: developer.html
   </div>
 
   <div class='section'>
-    <div class='section-title'>Getting Started</div>
+    <div class="bg-white" style="padding-bottom:20px; margin-top:50px">
+      <div class="row justify-content-center">
+        <div class="col-md-6 text-center">
+          <h2><b>Getting Started</b></h2>
+          <div class="horizontal-underline"></div>
+        </div>
+      </div>
+    </div>
+
     The easiest way to get started quickly is build an example app. <a href='https://github.com/iobio/example-bamViewer'>In this tutorial</a> you can learn how to build a simple bam viewer (image below) that can grab regions of alignments from both URLs and Files and visualize the data. <a href="http://iobio.github.io/example-bamViewer/step5/app.step5.html">See example app in action</a>
     <div style="width:500px; margin:0px auto"><a href="http://iobio.github.io/example-bamViewer/step5/app.step5.html"><img style="width:100%" src='public/images/bamViewer.png'/></img></a></div>
   </div>
 
-  <div class='section'>
-    <div class='section-title'>Visualizations</div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12">
+        <div class='section-title'>Visualizations</div>
 
-    <ul id='visualizations'>
-      <li>
-        <div class='viz-title'><a href='http://bl.ocks.org/chmille4/f404d4c7967497ea39ee'>Alignment <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-        <div id='alignment-viz'/>
-      </li>
-      <li>
-        <div class='viz-title'><a href='http://bl.ocks.org/chmille4/6dd6e4e6c837060fc8c2'>Gene Model <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-        <div id='geneModel-viz'/>
-      </li>
-      <li>
-        <div class='viz-title'><a href='http://bl.ocks.org/chmille4/31d892d71e66e63bbf4f'>Bar <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-        <div id='bar-viz'/>
-      </li>
-      <li>
-        <div class='viz-title'><a href='http://bl.ocks.org/chmille4/a178c0e5813505b09384'>Bar Viewer <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-        <div id='barViewer-viz'/>
-      </li>
-      <li>
-          <div class='viz-title'><a href='http://bl.ocks.org/chmille4/49b19f91d655e5a5f8c2'>Pie <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-          <div id='pie-viz'/>
-      </li>
-      <li>
-        <div class='viz-title'><a href='http://bl.ocks.org/chmille4/b69cb6e41656dc6b3b50'>Line <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
-        <div id='line-viz'/>
-      </li>
-    </ul>
+        <ul id='visualizations'>
+          <li>
+            <div class='viz-title'><a href='http://bl.ocks.org/chmille4/f404d4c7967497ea39ee'>Alignment <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+            <div id='alignment-viz'/>
+          </li>
+          <li>
+            <div class='viz-title'><a href='http://bl.ocks.org/chmille4/6dd6e4e6c837060fc8c2'>Gene Model <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+            <div id='geneModel-viz'/>
+          </li>
+          <li>
+            <div class='viz-title'><a href='http://bl.ocks.org/chmille4/31d892d71e66e63bbf4f'>Bar <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+            <div id='bar-viz'/>
+          </li>
+          <li>
+              <div class='viz-title'><a href='http://bl.ocks.org/chmille4/49b19f91d655e5a5f8c2'>Pie <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+              <div id='pie-viz'/>
+          </li>
+          <li>
+            <div class='viz-title'><a href='http://bl.ocks.org/chmille4/a178c0e5813505b09384'>Bar Viewer <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+            <div id='barViewer-viz'/>
+          </li>
+
+          <li>
+              <div class='viz-title'><a href='http://bl.ocks.org/chmille4/49b19f91d655e5a5f8c2'>Pie chooser<i class="glyphicon glyphicon-new-window" aria-hidden="true"></i></a></div>
+              <div id='piechooser-viz'/>
+          </li>
+
+          <li>
+            <div class='viz-title'><a href='http://bl.ocks.org/chmille4/b69cb6e41656dc6b3b50'>Line <span class="glyphicon glyphicon-new-window" aria-hidden="true"></span></a></div>
+            <div id='line-viz'/>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class='section'>
+
     <div style="clear:both"></div>
     <script>
 
@@ -153,17 +182,71 @@ permalink: developer.html
           .tooltip(function(d) { return d.feature_type + ' ' +  format(d.start) + ' - ' + format(d.end); })
       chart( selection );
     });
+
+
+    //Pie chooser-viz
+    var m = [15, 35, 25, 15],
+    r = Math.min(w, h) / 2;
+
+    var color = d3.scale.category20b();
+
+    var pie = d3.layout.pie()
+                       .sort(null)
+                       .value(function(d,i) {return d.value});
+    var references = [
+      {name: 'chr1', value: +20},
+      {name: 'chr2', value: +14},
+      {name: 'chr3', value: +15},
+      {name: 'chr4', value: +17},
+      {name: 'chr5', value: +23},
+      {name: 'chr6', value: +24},
+      {name: 'chr7', value: +30}
+    ];
+
+    var selection = d3.select("#piechooser-viz").datum( pie(references) );
+    var chart = iobio.viz.pieChooser()
+        .radius(r)
+        .innerRadius(r*.5)
+        .padding(30)
+        .color( function(d,i) {
+          return color(i);
+        })
+        .on("click", function(d,i) {
+        })
+        .on("clickall", function(d,i) {
+        })
+        .tooltip( function(d) {
+          return d.data.name;
+        });
+    chart( selection );
+
   </script>
 
   </div>
 
   <div class='section'>
-    <div class='section-title'>Queued Web Services</div>
+    <div class='section'>
+      <div class="bg-white" style="padding-bottom:20px; margin-top:50px">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+            <h2><b>Queued Web Services</b></h2>
+            <div class="horizontal-underline"></div>
+          </div>
+        </div>
+      </div>
     If you are hitting the queue too much, contact us to figure out how to increase power.
   </div>
 
   <div class='section'>
-    <div class='section-title'>Iobio Libraries</div>
+    <div class='section'>
+      <div class="bg-white" style="padding-bottom:20px; margin-top:50px">
+        <div class="row justify-content-center">
+          <div class="col-md-6 text-center">
+            <h2><b>Iobio Libraries</b></h2>
+            <div class="horizontal-underline"></div>
+          </div>
+        </div>
+      </div>
 
     <div class='library'>
       <div class='library-title'><a href="https://github.com/iobio/iobio.js">iobio.js</a></div>
@@ -174,16 +257,6 @@ permalink: developer.html
       <div class='library-title'><a href='https://github.com/iobio/iobio.viz'>iobio.viz</a></div>
       The visualization library that is designed to handle streaming data. <a href='https://github.com/iobio/iobio.viz'>Full docs and examples here</a>.
     </div>
-
-    <!-- <div class='library'>
-      <div class='library-title'>iobio.ui - future</div>
-      The user interface library where iobio and genomic specific widgets live. Full docs and examples coming.
-    </div>
-
-    <div class='library'>
-      <div class='library-title'>iobio.parse - future</div>
-      The a collection of JS parsers for common genomic binary data types. The first two will be a bam parser and a vcf parser.
-    </div> -->
 
     <div class='library'>
       <div class='library-title'><a href='https://github.com/iobio/minion'>Minion</a></div>

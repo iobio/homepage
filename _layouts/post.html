@@ -3,20 +3,30 @@ layout: blog
 comments: true
 ---
 
-<div class="post post-main" style="margin-top: 100px;">
-  <div class="post-title">{{ page.title }}</div>
-  <div style="line-height: 17px; margin-top: -9px">
-    <div class="post-date">{{ page.date | date_to_string }}</div>
-    <div class="post-author"><a href="http://marthlab.org/people.html">{{ page.tags  | first }}</a></div>
-    <div class='post-headshot'>
-      <a href="http://marthlab.org/people.html">
-      <img src="/public/images/team/{{ page.tags | first | replace:' ','_'  }}.png"/></a>
+<div class="row justify-content-center">
+  <div class="col-md-12 text-center">
+    <h1><b>{{ page.title }}</b></h1>
+    <p class="card-text" style="font-size:20px">
+      <span class="text-muted">{{ page.date | date_to_string }}</span>
+      <span style="margin-left:10px"><b><a href="http://marthlab.org/people.html">{{ page.tags  | first }}</a></b></span>
+      <span><img class="avatar avatar-sm" src="/public/images/team/{{ page.tags | first | replace:' ','_'  }}.png" alt="Avatar"></span>
+    </p>
+  </div>
+</div>
+
+<div class="post post-main" style="margin-top: 50px;"></div>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <div class='post-image'> <img src={{ page.image }}></img></div>
+      <br>
+      <div class='post-content' style="font-weight:400; font-size:17px; color: #222; text-align:justify">
+        {{ content }}
+      </div>
+
     </div>
   </div>
-  <div class='post-image'> <img src={{ page.image }}></img></div>
-  <div class='post-content'>
-    {{ content }}
-  </div>
+</div>
 
   {% if page.comments %}
     <div id="disqus_thread"></div>
@@ -35,29 +45,32 @@ comments: true
   {% endif %}
 </div>
 
-<div class="related posts">
-  <h2>Related Posts</h2>
-  <ul class="related-posts">
-    {% for post in site.related_posts limit:3 %}
-<!--       <li>
-        <h3>
+<div class="row justify-content-center" style="margin-top:50px">
+  <div class="col-md-6 text-center">
+    <h3><b>Related Posts</b></h3>
+  </div>
+</div>
+<br>
+<div class="container">
+  <div class="row justify-content-center">
+      {% for post in site.related_posts limit:3 %}
+      <div class="col-lg-4">
+        <div class="card lift mb-2">
           <a href="{{ post.url }}">
-            {{ post.title }}
-            <small>{{ post.date | date_to_string }}</small>
-            <div><img src={{ post.image }}/></div>
+            <img class="card-img-top blog-card-snippet" alt="{{post.title}}" src={{ post.image }}>
           </a>
-        </h3>
-      </li> -->
-      <li class="snippet">
-        <div class='snippet-thumbnail'><a href="{{ post.url }}"><img src={{ post.image }}></img></a></div>
-        <div class='snippet-text'>
-          <div class='snippet-byline'>BY {{ post.tags | first }} ON {{ post.date | date: "%b %-d, %Y" }}</div>
-          <div></div>
-          <img class='snippet-headshot' src="../../../../public/images/team/{{ post.tags | first | replace:' ','_'  }}.png"/>
-          <div class='snippet-title'><a href="{{ post.url }}">{{ post.title }}</a></div>
-          <div class='snippet-subtitle'>{{ post.subtitle }}</div>
+          <div class="user">
+            <img class="avatar avatar-lg avatar-headshot float-right" src="/public/images/team/{{ post.tags | first | replace:' ','_'  }}.png" alt="Avatar" >
+          </div>
+          <div class="card-body">
+            <a href="{{ post.url }}">
+              <h5 class="card-title">{{ post.title }}</h5>
+            </a>
+            <p class="card-text">{{ post.subtitle }}</p>
+            <p class="card-text"><small class="text-muted">BY {{ post.tags | first }} ON {{ post.date | date: "%b %-d, %Y" }}</small></p>
+          </div>
         </div>
-      </li>
-    {% endfor %}
-  </ul>
+      </div>
+      {% endfor %}
+  </div>
 </div>

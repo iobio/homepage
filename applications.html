@@ -1,64 +1,352 @@
 ---
-layout: default
+layout: applications
 title: "Applications"
 permalink: applications.html
 group: "navigation"
 order: 2
 ---
-  <div class='section'>
-    <div class='section-title'>Applications</div>
-    <div class="description" style="width:810px; margin: 10px auto 35px auto;font-size:16px; text-align:center">
-      These are our full applications ready for use. Improvements? New Features? New Apps? <a href="/about.html">Contact us!</a>
+
+
+<section class="bg-white" style="padding-top:85px; padding-bottom:35px">
+</section>
+
+<section class="bg-white" style="padding-bottom:65px">
+  <div class="row justify-content-center">
+    <div class="col-md-10 text-center">
+      <h3>Your next discovery awaits <span class="blinking-cursor">|</span></h3>
+      <p style="font-size:1.2rem">These are our full applications ready for use. Improvements? New Features? New Apps? <a href="/about.html">Contact us!</a></p>
     </div>
-    <ul id="apps">
-      <li>
-        <div class='app'>
-          <div class="app-title"><a href="http://gene.iobio.io/">gene.iobio.io</div>
-          <a href="http://gene.iobio.io"><img src="public/images/gene.iobio_wide.png" style="height:247px" ></img></a>
-          <div class="description">a web app for investigating potential disease-causing variants </div>
-        </div>
-      </li>
-      <li>
-        <div class='app'>
-          <div class="app-title"><a href="https://genepanel.iobio.io/">genepanel.iobio.io </a></div>
-          <a href="https://genepanel.iobio.io/"><img src="public/images/panel.iobio_wide.png" style="height:247px" ></img></a>
-          <div class="description">a web app for generating list of genes based on suspected conditions and phenotypes.
+  </div>
+</section>
+
+
+<div class="">
+  <div class="row justify-content-between">
+    <article class="col-lg-10 doc-content" style="padding-right:0">
+
+      <section id="gene-section" style="padding-top:40px; padding-bottom:40px">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="mb-2 mt-4">
+                  <a href="https://gene.iobio.io">
+                    <img style=" width:90%" src="public/images/gene.iobio_wide.png" alt="">
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="container">
+                <div class="mb-2 mt-5">
+                  <a href="https://gene.iobio.io">
+                    <h2 class="card-title"> gene.iobio.io </h2>
+                  </a>
+                  <br>
+                  <p class="card-text" style="font-size:18px">A web app for investigating potential disease-causing variants in real-time.
+                  </p>
+                  <a href="https://github.com/iobio/gene.iobio.vue" target="_blank"><button class="btn btn-outline-dark btn-sm"><i class="fab fa-github fa-lg"></i> &nbsp; GitHub</button></a>
+                  <button data-toggle="modal" data-target="#geneModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <a href="https://gene.iobio.io/" target="_blank"><button class="btn btn-app-primary btn-sm">Get Started</button></a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+      <!-- Genepanel -->
+      <section id="genepanel-section" class="bg-white ">
+        <div class="container">
+          <br><br>
+          <div class="row justify-content-center flex-column-reverse flex-lg-row">
+
+            <div class="col-lg-6">
+              <div class="container">
+                <div class="mb-2 mt-5">
+                  <a href="https://genepanel.iobio.io">
+                    <h2 class="card-title"> genepanel.iobio.io </h2>
+                  </a>
+                  <br>
+                  <p class="card-text" style="font-size:18px">
+                    A web app for generating list of genes based on suspected conditions and phenotypes.
+                  </p>
+                  <a href="https://github.com/iobio/genepanel.iobio" target="_blank"><button class="btn btn-outline-dark btn-sm"><i class="fab fa-github fa-lg"></i> &nbsp; GitHub</button></a>
+                  <button data-toggle="modal" data-target="#genepanelModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <a href="https://genepanel.iobio.io" target="_blank"><button class="btn btn-app-primary btn-sm">Get Started</button></a>
+                  <br><br>
+                </div>
+                </div>
+              </div>
+
+            <div class="col-lg-6 text-center">
+                <div class="mb-2 mt-4">
+                  <a href="https://genepanel.iobio.io">
+                    <img style=" width:95%" src="public/images/panel.iobio_wide.png" alt="">
+                  </a>
+                </div>
+            </div>
+            </div>
+          </div>
+          <br>
+      </section>
+
+      <!-- bam -->
+      <section id="bam-section">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-6 text-center">
+                <div class="mb-2 mt-4">
+                  <a href="http://bam.iobio.io">
+                    <img style=" width:90%" src="public/images/bam.iobio_wide.png" alt="">
+                  </a>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+              <div class="container">
+                <div class="mb-2 mt-5">
+                  <a href="https://bam.iobio.io">
+                    <h2 class="card-title"> bam.iobio.io </h2>
+                  </a>
+                  <br>
+                  <p class="card-text" style="font-size:18px">
+                    An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics
+                  </p>
+                  <a href="https://github.com/chmille4/bam.iobio.io" target="_blank"><button class="btn btn-outline-dark btn-sm"><i class="fab fa-github fa-lg"></i> &nbsp; GitHub</button></a>
+                  <button data-toggle="modal" data-target="#bamModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <a href="https://bam.iobio.io" target="_blank"><button class="btn btn-app-primary btn-sm">Get Started</button></a>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </section>
+
+
+
+      <section id="vcf-section" class="bg-white ">
+        <div class="container">
+          <br><br>
+          <div class="row justify-content-center flex-column-reverse flex-lg-row">
+
+            <div class="col-lg-6">
+              <div class="container">
+                <div class="mb-2 mt-5">
+                  <a href="http://vcf.iobio.io">
+                    <h2 class="card-title"> vcf.iobio.io </h2>
+                  </a>
+                  <br>
+                  <p class="card-text" style="font-size:18px">
+                    A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics
+                    <br>
+                  </p>
+                  <a href="https://github.com/iobio/vcf.iobio.io" target="_blank"><button class="btn btn-outline-dark btn-sm"><i class="fab fa-github fa-lg"></i> &nbsp; GitHub</button></a>
+                  <button data-toggle="modal" data-target="#vcfModalCenter" class="btn btn-outline-primary btn-sm">Learn More</button>
+                  <a href="http://vcf.iobio.io" target="_blank"><button class="btn btn-app-primary btn-sm">Get Started</button></a>
+                </div>
+                </div>
+              </div>
+
+            <div class="col-lg-6 text-center">
+                <div class="mb-2 mt-4">
+                  <a href="https://vcf.iobio.io">
+                    <img style=" width:95%" src="public/images/vcf.iobio_wide.png" alt="">
+                  </a>
+                </div>
+            </div>
+            </div>
+          </div>
+          <br>
+      </section>
+
+    </article>
+
+    <aside class="col-lg-2 d-none d-md-block bg-white" style="border-left:1px solid #e5e5e5; border-top:4px solid #f8f8f8; padding-top:60px; padding-bottom:30px">
+        <div class="sticky" >
+          <div class="justify-content-center">
+            <br><br><br>
+            <strong style="padding: 0.5rem 30px; font-size: 1.2rem"><i class="fas fa-stream"></i> &nbsp; Categories</strong>
+            <br><br>
+            <ul id="toc" class="nav flex-column toc">
+              <li class="nav-item">
+                <a data-scroll class="nav-link aside-link-term" href="#gene-section">Variant Interrogation</a>
+              </li>
+              <li class="nav-item">
+                <a data-scroll class="nav-link aside-link-term" href="#genepanel-section">Gene List Generation</a>
+              </li>
+              <li class="nav-item">
+                <a data-scroll class="nav-link aside-link-term" href="#bam-section">Alignment Inspection</a>
+              </li>
+              <li class="nav-item">
+                <a data-scroll class="nav-link aside-link-term" href="#vcf-section">Variant Inspection</a>
+              </li>
+            </ul>
+            <br>
           </div>
         </div>
-      </li>
-      <li>
-        <div class='app'>
-          <div class="app-title">bam.iobio.io</div>
-          <a href="http://bam.iobio.io"><img src="public/images/bam.iobio_wide.png"></img></a>
-          <div class="description">an alignment data inspector tool that quickly samples bam files and visualizes a series of metrics</div>
-        </div>
-      </li>
-      <li>
-        <div class='app'>
-          <div class="app-title">vcf.iobio.io</div>
-          <a href="http://vcf.iobio.io"><img src="public/images/vcf.iobio_wide.png" style="height:247px" ></img></a>
-          <div class="description">an variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</div>
-        </div>
-      </li>
-    </ul>
-    <div class='section-title' style="margin-top: 150px">Demo Playground</div>
-    <div class="description" style="width:777px; margin: 10px auto 35px auto;font-size:16px; text-align:center">
-      Here are some  ideas we have explored but haven't turned into full polished apps.
-    </div>
-    <ul id="apps">
-      <li>
-        <div class='app'>
-          <div class="app-title">Population Clustering</div>
-          <a href="/demo/pca/"><img src="public/images/pca.iobio_wide.png"></img></a>
-          <div class="description">Clusters 1000G data based on variants while showing the region and population of origin. Also allows realtime re-analysis by changing the minor allele frequence filter threshold</div>
-        </div>
-      </li>
-      <li>
-        <div class='app'>
-          <div class="app-title">Variant Caller Comparer</div>
-          <a href="/demo/variantcomparer/"><img src="public/images/variant_comparer.iobio_wide.png" style="height:247px" ></img></a>
-          <div class="description">Real-time variant calling, comparing two callers. Also allows changing parameters and seeing how it affects results</div>
-        </div>
-      </li>
-    </ul>
+    </aside>
+
   </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="geneModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">gene.iobio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          Gene.iobio provides variant prioritization and interrogation for research investigation and discovery in real-time using informative and engaging visualizations.
+          <p></p>
+          <p>
+            <strong>
+              Workflow:
+            </strong>
+            <ul>
+              <li>Search on a gene or a phenotype</li>
+              <li>Gene by gene, variants, and coverage are being analyzed on powerful IOBIO servers</li>
+              <li>Click on a gene and visualize the variants, colored by the impact. See coverage levels across the gene</li>
+              <li>As genes are analyzed, filters are pinpointing variants for closer examination. Customize the filters and the variants are instantly reassessed</li>
+              <li>Review each filtered variant to assess pathogenicity and association with known phenotypes</li>
+            </ul>
+          </p>
+          <p></p>
+          <p>
+            <strong>
+              Videos:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=EW2Sm4HEAPg">Multi-gene analysis</a></li>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=dnq8HtthDgU">Coverage analysis</a></li>
+              <li><a target="_blank" href="https://www.youtube.com/watch?v=6T8DkrJWd6w">Saving your analysis</a></li>
+            </ul>
+          </p>
+          <p>
+            <strong>
+              Blog posts:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="http://iobio.io/2017/09/27/loading-data/">Loading your data</a></li>
+              <li><a target="_blank" href="http://iobio.io/2018/07/20/gene_3.0/">gene.iobio 3.0</a></li>
+              <li><a target="_blank" href="http://iobio.io/2017/09/29/gene_2.5.0/">ClinVar variants, gnomAD, affected status</a></li>
+            </ul>
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="genepanelModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">genepanel.iobio</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          Genepanel.iobio generates comprehensive gene lists, leveraging multiple genetics research community resources; including commercially-available gene panel tests and phenotype term-driven gene list generation tools.
+          <p></p>
+          <p>
+            There are three main resources in Genepanel.iobio:
+            <ul>
+              <li>Genetic Testing Registry: Allows to compile a gene list for suspected conditions</li>
+              <li>Phenolyzer: Generates a gene list for suspected phenotypes</li>
+              <li>Add Genes: Provides an option to add a suspected genes</li>
+            </ul>
+          </p>
+          <p></p>
+          Results from all these resources are propagated to the Summary page, which is a comprehensive gene list for the suspected condition and its associated phenotypes, along with the manually added genes.
+          <p></p>
+          <p>
+            <strong>
+              Links:
+            </strong>
+            <ul>
+              <li><a target="_blank" href="http://iobio.io/user_guides/2018/10/28/how-to-use-gtr/">How to Use Genetic Testing Registry </a></li>
+              <li><a target="_blank" href="http://iobio.io/user_guides/2018/10/27/how-to-use-phenolyzer/">How to Use Phenolyzer </a></li>
+              <li><a target="_blank" href="http://iobio.io/2018/11/19/genepanel.iobio-released/">Genepanel.iobio released</a></li>
+            </ul>
+          </p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="bamModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">bam.iobio</h5>
+        <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          <p>
+            Bam.iobio provides 3 primary statistics:
+            <ul>
+              <li>Estimated read coverage is shown linearly across the genome</li>
+              <li>Read coverage distribution</li>
+              <li>Fragment length distribution</li>
+            </ul>
+          </p>
+          <p></p>
+The dashboard can be zoomed to show statistics for a single chromosome at a time. The app works for both BAM and CRAM format files. Files will normally be processed by providing a URL to the app, but local files may also be used.
+          <p></p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="modal fade bd-example-modal-lg" id="vcfModalCenter" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">vcf.iobio</h5>
+        <button  type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="col-lg-12" >
+          <p>
+            vcf.iobio shows high level variant calling (VCF) metrics in real time. Including:
+            <ul>
+              <li>Variant density - number of variant calls across all autosomes and sex chromosomes</li>
+              <li>Ts/Tv ratio - ratio of transitions to transversions</li>
+              <li>Base changes - A>G/C/T, G>A/C/T, C>A/G/T, T>A/G/C</li>
+              <li>Variant types - SNPs, insertions, deletions</li>
+            </ul>
+          </p>
+          <p></p>
+
+        </div>
+      </div>
+      <div class="modal-footer">
+      </div>
+    </div>
+  </div>
+</div>

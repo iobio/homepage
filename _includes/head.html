@@ -1,10 +1,6 @@
 <head>
-  <!-- <link href="http://gmpg.org/xfn/11" rel="profile">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta http-equiv="content-type" content="text/html; charset=utf-8"> -->
-
-  <!-- Enable responsiveness on mobile devices-->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1"> -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>
     {% if page.title == "Home" %}
@@ -13,40 +9,257 @@
       {{ page.title }} &middot; {{ site.title }}
     {% endif %}
   </title>
+  <meta name="description" content="IOBIO is a suite of web apps for visually driven real-time analysis of genomic data">
+
 
   <!-- CSS -->
   <link rel="stylesheet" href="/public/css/poole.css">
   <link rel="stylesheet" href="/public/css/syntax.css">
   <link rel="stylesheet" href="/public/css/lanyon.css">
-  <link rel="stylesheet" href="/public/css/iobio.viz.min.css">
-  <link rel="stylesheet" href="/public/js/jquery.min.js">
-  <!-- <link rel="stylesheet" href="{{ site.baseurl }}public/css/bootstrap/css/bootstrap.min.css">   -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link href='http://fonts.googleapis.com/css?family=Quicksand:300,400' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Overlock+SC' rel='stylesheet' type='text/css'>
-  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400' rel='stylesheet' type='text/css'>
-  <link href="/public/js/video-js/video-js.css" rel="stylesheet">
-  <link rel="stylesheet" href="/public/css/site.css">
+  <link rel="stylesheet" href="/public/css/iobio_style.css">
+  <!-- <link rel="stylesheet" href="/public/css/vendor.css">
+  <link rel="stylesheet" href="/public/css/style.css"> -->
+  <link rel="stylesheet" href="https://guidebook.webuildthemes.com/assets/css/vendor.css" />
+  <link rel="stylesheet" href="https://guidebook.webuildthemes.com/assets/css/style.css" />
+  <link rel="stylesheet" type="text/css" href="http://iobio.io/public/css/iobio.viz.min.css">
+
+
+  <!-- Animate CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+
 
   <!-- JS -->
-  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-  <script src="/public/js/video-js/video.js"></script>
-  <script src="/public/js/d3.min.js"></script>
-  <script src="/public/js/iobio.viz.min.js"></script>
+  <!-- <script src="/public/js/vendor.min.js"></script>
+  <script src="/public/js/app.js"></script> -->
+  <script src="https://guidebook.webuildthemes.com/assets/js/vendor.min.js"></script>
+  <script src="https://guidebook.webuildthemes.com/assets/js/app.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet">
 
-  <!-- Icons -->
-  <!-- <link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ site.baseurl }}public/apple-touch-icon-precomposed.png"> -->
-  <link rel="icon" type="image/png" href="/public/favicon.ico?v=5">
-  <link rel="shortcut icon" href="/public/favicon.ico?v=5">
+  <!-- Typed js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
+  <script src="http://iobio.io/public/js/iobio.viz.min.js"></script>
 
   <!-- RSS -->
   <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+
 
   <!-- tracking code -->
   <script>
+
+    function typeOnLoad(){
+
+      var owl = $(".owl-carousel");
+
+      $('.owl-stage-outer').after("<center><p id='BeforeActiveSliderContent'>vcf.iobio</p></center><center><i id='ActiveSliderContent'>A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics</i></center>")
+
+      owl.on('changed.owl.carousel',function(property){
+          var current = property.item.index;
+          var src = $(property.target).find(".owl-item").eq(current).find("img").attr('src');
+          var idFound = $(property.target).find(".owl-item").eq(current).find("img").attr('id');
+
+          switch (idFound) {
+            case "vcf":
+              if(typedDefaultEl===undefined){
+                typedDefault();
+              }
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "vcf.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A variant data inspector tool that quickly samples vcf files and visualizes a series of metrics"
+              break;
+            case "genepanel":
+              if(typedGenepanel===undefined){
+                typeGenepanel();
+              }
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "genepanel.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A web app for generating list of genes based on suspected conditions and phenotypes"
+              break;
+            case "gene":
+              if(typedGene===undefined){
+                typeGene();
+              }
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "gene.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A web app for investigating potential disease-causing variants"
+              break;
+            case "bam":
+              if(typedBAM===undefined){
+                typeBAM();
+              }
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "bam.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "An alignment data inspector tool that quickly samples bam files and visualizes a series of metrics"
+              break;
+          }
+      });
+
+      //Hide video when the modal is closed
+      $("#exampleModalCenter").on('hide.bs.modal', function(){
+        $("#MY_VIDEO_1")[0].player.pause();
+      })
+
+
+      document.querySelector("#SecondTypedElement").style.display = "block";
+      document.querySelector("#firstTypedElement").style.display = "none";
+      AutoplaySlider();
+      typeBAM();
+      var notificationBarSet = sessionStorage.getItem('notificationShown');
+      if(notificationBarSet!== null){
+        //Do not show notification
+        document.querySelector('#header-bar').style.top = '0';
+      }
+      else {
+        //Show notification bar and set session storage
+        setNotificationBarSession();
+        document.querySelector('#notification-bar').style.display = 'block';
+        document.querySelector('#header-bar').style.top = '56px';
+      }
+    }
+    window.onload = typeOnLoad;
+    var typed3;
+    var stringPos = 0;
+    function startNewTyping(){
+       typed3 = new Typed('#typed-element', {
+        strings: ['Variant Inspector', ' Variant Interrogation', 'Gene List Generation', 'Alignment Inspector' ],
+        typeSpeed: 80,
+        // time before typing starts
+        startDelay: 500,
+        // backspacing speed
+        backSpeed: 55,
+        // time before backspacing
+        backDelay: 3200,
+        smartBackspace: false, // this is a default
+        loop: true,
+        onComplete: function(self){
+        },
+        preStringTyped: function(pos, self) {
+         },
+        onStringTyped: function(pos, self) {
+          stringPos++;
+         },
+
+      });
+
+    }
+
+    var typedDefaultEl;
+    var typedVCF;
+    var typedBAM;
+    var typedGene;
+    var typedGenepanel;
+
+    function typedDefault(){
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+        typedBAM = undefined;
+      }
+      if(typedGene!==undefined){
+        typedGene.destroy();
+        typedGene = undefined;
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+        typedGenepanel = undefined;
+      }
+      typedDefaultEl = new Typed('#typed-element', {
+       strings: [' Variant Inspection' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+
+    function typeGene(){
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+        typedBAM = undefined;
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+        typedGenepanel = undefined;
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
+      }
+      typedGene = new Typed('#typed-element', {
+       strings: [' Variant Interrogation' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+    function typeGenepanel(){
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+        typedBAM = undefined;
+      }
+      if(typedGene!==undefined){
+        typedGene.destroy();
+        typedGene = undefined;
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
+      }
+       typedGenepanel = new Typed('#typed-element', {
+       strings: [' Gene List Generation' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+    function typeBAM(){
+      if(typedGene!==undefined){
+        typedGene.destroy();
+        typedGene = undefined;
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+        typedGenepanel = undefined;
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
+      }
+       typedBAM = new Typed('#typed-element', {
+       strings: [' Alignment Inspection' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+
+    function setNotificationBarSession(){
+      sessionStorage.setItem('notificationShown', true);
+    }
+
     (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
     (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)

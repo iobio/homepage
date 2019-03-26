@@ -6,28 +6,32 @@ group: "navigation"
 order: 5
 ---
 
-<div style="width:100%; text-align:center; font-size: 60px; font-family: 'Open Sans'; color: rgb(70,70,70); margin-top:20px" >Blog</div>
-<div style="width:40px; border-bottom: 1px solid rgb(70,70,70); margin-left:auto;margin-right:auto"></div>
-<div class="posts">
-  <ul>
+
+<div class="row justify-content-center">
+  <div class="col-md-6 text-center">
+    <h2><b>User Guides</b></h2>
+    <div class="horizontal-underline"></div>
+  </div>
+</div>
+
+<div class="row justify-content-center">
   {% for post in site.categories.user_guides %}
-    <li class="snippet">
-
-      <div class='snippet-thumbnail'><a href="{{ post.url }}"><img src={{ post.image }}></img></a></div>
-      <div class='snippet-text'>
-        <div class='snippet-byline'>BY {{ post.tags | first }} ON {{ post.date | date: "%b %-d, %Y" }}</div>
-        <div></div>
-        <img class='snippet-headshot' src="public/images/team/{{ post.tags | first | replace:' ','_'  }}.png"/>
-        <div class='snippet-title'><a href="{{ post.url }}">{{ post.title }}</a></div>
-        <div class='snippet-subtitle'>{{ post.subtitle }}</div>
+  <div class="col-lg-4">
+    <div class="card lift mb-2">
+      <a href="{{ post.url }}">
+        <img class="card-img-top blog-card-snippet" alt="{{post.title}}" src={{ post.image }}>
+      </a>
+      <div class="user">
+        <img class="avatar avatar-lg avatar-headshot float-right" src="/public/images/team/{{ post.tags | first | replace:' ','_'  }}.png" alt="Avatar" >
       </div>
-
-      <!-- <div class="entry">
-        {{ post.excerpt }}
-      </div> -->
-
-      <!-- <a href="{{ post.url }}" class="read-more">Read More</a> -->
-    </li>
+      <div class="card-body">
+        <a href="{{ post.url }}">
+          <h5 class="card-title">{{ post.title }}</h5>
+        </a>
+        <p class="card-text">{{ post.subtitle }}</p>
+        <p class="card-text"><small class="text-muted">BY {{ post.tags | first }} ON {{ post.date | date: "%b %-d, %Y" }}</small></p>
+      </div>
+    </div>
+  </div>
   {% endfor %}
-  </ul>
 </div>

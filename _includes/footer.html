@@ -1,31 +1,79 @@
-<div class="footer">
-  {% if page.title != "What is it?" %}
-    <div class="logos">
-      <div style="position:absolute; left: 100px; top:0px; font-size:50px;font-family:'Overlock SC', cursive;"><a href="http://marthlab.org" style="color:black; text-decoration:none;">Marthlab</a></div>
-      <a href="http://ucgd.genetics.utah.edu/"><img src="/public/images/ustar-ucgd-logo.jpg" style="height:60px;"/></a>
-      <a href="http://www.genetics.utah.edu/"><img src="/public/images/genetics_mainlogo3_lrg.png" style="height:50px;position:absolute;right:0px;top:7px"/></a>
-    </div>
-  {% endif %}
-  <div class="developers">
-        <div class='title'>Developed in the <a href="http://marthlab.org/">Marth Lab by</a></div>
-
-        <div class="members">
-          <span style="margin-right:15px">
-            <a href="https://github.com/chmille4"><img src="/public/images/github_2d8fc1.png"/></a>
-            Chase Miller
-          </span>
-          <span style="margin-right: 15px">
-            <a href="https://github.com/yiq"><img src="/public/images/github_2d8fc1.png"/></a>
-            Yi Qiao
-          </span>
-          <span style="margin-right: 15px">
-            <a href="https://github.com/tonydisera"><img src="/public/images/github_2d8fc1.png"/></a>
-            Tony DiSera
-          </span>
-          <span style="margin-right: 15px">
-            <a href="https://github.com/alistairnward"><img src="/public/images/github_2d8fc1.png"/></a>
-            Alistair Ward
-          </span>
+<section class="bg-dark" style="padding-top:60px; padding-bottom:60px; background-color: #202020 !important">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-5 ">
+        <div class="container">
+          <center >
+            <b style="color:white; font-size:23px">Your next discovery awaits</b>
+            <br><br>
+            <a href="/applications.html"><button type="submit" class="btn btn-sm btn-outline-light">Try the apps now <i class="material-icons" style="vertical-align: middle;">navigate_next</i></button></a>
+          </center>
         </div>
+      </div>
+      <div class="col-lg-1" style="height:20px">
+
+      </div>
+      <div class="col-lg-6 ">
+        <div class="container">
+          <center >
+            <b style="color:white; font-size:22px">Stay updated by signing up for our newsletter</b>
+            <br><br>
+            <div class="container">
+              <form
+                class="form-inline"
+                id="footerSubscribeForm"
+                action="http://iobio.us9.list-manage.com/subscribe/post?u=ddbe7be3d1ca18356bf5c0404&amp;id=ace369fbec"
+                method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate style="padding: 0px"
+
+              >
+                <input type="email" style="width:60%; background-color:#ffffffe3" class="form-control form-control-sm required email footerSubscribbeBox" name="EMAIL" id="mce-EMAIL" aria-describedby="emailHelp" placeholder="Enter email">
+                <input type="submit" id="mc-embedded-subscribe" value="Subscribe" name="subscribe" class="btn btn-outline-light btn-sm footerSubscribbeBoxButton" style="margin:0"></button>
+              </form>
+              <div id="mce-responses" class="clear">
+                <div class="response" id="mce-error-response" style="display:none"></div>
+                <div class="response" id="mce-success-response" style="display:none"></div>
+              </div>
+
+            </div>
+          </center>
+
+        </div>
+      </div>
     </div>
-</div>
+  </div>
+</section>
+
+
+<footer style="padding-bottom:50px">
+  <div class="container">
+    <div class="row gutter-3">
+      <div class="col-11 col-md-3 offset-1">
+      <div class="container">
+        <p href="/" class="navbar-brand" style="font-size: 35px; font-weight: 600; color:back">
+          IOBIO
+        </p>
+      </div>
+      </div>
+      <div class="col-12 col-md-6 offset-2">
+        <p class="mb-4"> Developed in the <a href="http://marthlab.org/" target="_blank" >MarthLab</a>, University of Utah</p>
+        <div class="row">
+          <div class="col">
+            <ul class="list-group list-group-minimal">
+              <li class="list-group-item"><a href="/applications.html" class="link">Applications</a></li>
+              <li class="list-group-item"><a href="http://developer.iobio.io/" class="link">Developers</a></li>
+              <li class="list-group-item"><a href="/blog.html" class="link">Blog</a></li>
+              <li class="list-group-item"><a href="/user_guides.html" class="link">User Guides</a></li>
+            </ul>
+          </div>
+          <div class="col">
+            <ul class="list-group list-group-minimal">
+              <li class="list-group-item"><a href="/about.html" class="link">About Us</a></li>
+              <li class="list-group-item"><a href="/sponsors.html" class="link">Sponsors</a></li>
+              <li class="list-group-item"><a href="https://github.com/iobio" target="_blank" class="link">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

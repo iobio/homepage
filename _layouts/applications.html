@@ -4,13 +4,10 @@
   {% include head.html %}
   {% include header.html %}
 
-  <body>
-
-    <section class="bg-white">
-      <div class="container blog-container">
+  <body data-spy="scroll" data-target="#toc">
+    <div >
         {{ content }}
-      </div>
-    </section>
+    </div>
 
     {% include footer.html %}
   </body>
