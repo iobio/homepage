@@ -49,11 +49,7 @@
     filter: blur(0px);
     -webkit-filter: blur(0px);
 }
-.active {
-  filter: blur(0.2px);
-  -webkit-filter: blur(0.2px);
 
-}
 
 .rounded{
   height: 100px
