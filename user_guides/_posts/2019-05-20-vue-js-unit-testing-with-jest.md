@@ -8,7 +8,7 @@ tags:
   - panel.iobio
 ---
 
-**Unit testing**: *Divide your code into small isolated units and then write automated tests for them and verify that each unit works as expected.*
+**Unit testing** *is a software testing method where the individual units/ components of a  software are tested to verify that each unit works as expected.*
 
 This guide will walk through creating a project with Vue CLI 3, using testing solutions, writing and running test cases while creating a basic single page application. It would be helpful to get the source code from the GitHub repository while following this post.
 
