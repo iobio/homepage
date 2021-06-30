@@ -75,6 +75,13 @@
               document.getElementById('BeforeActiveSliderContent').innerHTML = "genepanel.iobio";
               document.getElementById('ActiveSliderContent').innerHTML = "A web app for generating list of genes based on suspected conditions and phenotypes"
               break;
+            case "clin":
+              if(typedClin===undefined){
+                typeClin();
+              }
+              document.getElementById('BeforeActiveSliderContent').innerHTML = "clin.iobio";
+              document.getElementById('ActiveSliderContent').innerHTML = "A web app to review sequencing and case metrics, candidate variants, and generate report"
+              break;
             case "gene":
               if(typedGene===undefined){
                 typeGene();
@@ -146,6 +153,7 @@
     var typedBAM;
     var typedGene;
     var typedGenepanel;
+    var typedClin;
 
     function typedDefault(){
       if(typedBAM!==undefined){
@@ -159,6 +167,10 @@
       if(typedGenepanel!==undefined){
         typedGenepanel.destroy();
         typedGenepanel = undefined;
+      }
+      if(typedClin!==undefined){
+        typedClin.destroy();
+        typedClin = undefined;
       }
       typedDefaultEl = new Typed('#typed-element', {
        strings: [' Variant Inspection' ],
@@ -188,6 +200,10 @@
         typedDefaultEl.destroy();
         typedDefaultEl = undefined;
       }
+      if(typedClin!==undefined){
+        typedClin.destroy();
+        typedClin = undefined;
+      }
       typedGene = new Typed('#typed-element', {
        strings: [' Variant Interrogation' ],
        typeSpeed: 80,
@@ -215,8 +231,44 @@
         typedDefaultEl.destroy();
         typedDefaultEl = undefined;
       }
+      if(typedClin!==undefined){
+        typedClin.destroy();
+        typedClin = undefined;
+      }
        typedGenepanel = new Typed('#typed-element', {
        strings: [' Gene List Generation' ],
+       typeSpeed: 80,
+       // time before typing starts
+       startDelay: 500,
+       // backspacing speed
+       backSpeed: 55,
+       // time before backspacing
+       backDelay: 3200,
+       smartBackspace: false, // this is a default
+       loop: false
+     });
+    }
+    
+    
+    function typeClin(){
+      if(typedBAM!==undefined){
+        typedBAM.destroy();
+        typedBAM = undefined;
+      }
+      if(typedGene!==undefined){
+        typedGene.destroy();
+        typedGene = undefined;
+      }
+      if(typedGenepanel!==undefined){
+        typedGenepanel.destroy();
+        typedGenepanel = undefined;
+      }
+      if(typedDefaultEl!==undefined){
+        typedDefaultEl.destroy();
+        typedDefaultEl = undefined;
+      }
+       typedClin = new Typed('#typed-element', {
+       strings: [' Variant Analysis Workflow' ],
        typeSpeed: 80,
        // time before typing starts
        startDelay: 500,
@@ -241,6 +293,10 @@
       if(typedDefaultEl!==undefined){
         typedDefaultEl.destroy();
         typedDefaultEl = undefined;
+      }
+      if(typedClin!==undefined){
+        typedClin.destroy();
+        typedClin = undefined;
       }
        typedBAM = new Typed('#typed-element', {
        strings: [' Alignment Inspection' ],
