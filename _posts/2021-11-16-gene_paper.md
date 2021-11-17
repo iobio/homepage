@@ -2,7 +2,7 @@
 layout: post
 title: "gene.iobio paper"
 image: /public/images/blog/gene_paper/gene_nature_scientific_reports.png
-subtitle: published in Nature Scientific Reports
+subtitle: How genomic data is used in clinical diagnostics
 tags:
   - Alistair Ward
   - gene.iobio
