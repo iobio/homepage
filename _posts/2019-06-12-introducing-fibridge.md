@@ -99,15 +99,7 @@ as we do for any other file on the web.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vUOJfSfncxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-There is an instance of fibridge running at
-<a href='https://fbrg.xyz' target='_blank'>https://fbrg.xyz</a>.
-
-Try opening an mp4 or mov video on your computer, and using the QR code to
-start streaming it instantly on your phone.
-
-This is for demonstration purposes only. Please be kind to our bandwidth ;)
-
-If you want to use fibridge heavily, you can host it on your own server. Linux
+If you want to run fibridge, you can host it on your own server. Linux
 executables can be downloaded from
 <a href='https://github.com/anderspitman/fibridge-proxy-rs/releases' target='_blank'>the release page</a>.
 
