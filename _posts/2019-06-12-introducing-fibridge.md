@@ -96,6 +96,7 @@ Using fibridge allows us to use the exact same code for handling local files
 as we do for any other file on the web.
 
 # Demo
+## WARNING: Do NOT visit the website shown in the video. We don't own the domain anymore, and the last time I checked it was NSFW.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/vUOJfSfncxQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
