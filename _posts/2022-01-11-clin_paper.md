@@ -17,7 +17,7 @@ Clin.iobio is a diagnostic workflow comprising multiple steps powered by other t
 <div style="text-align: center;margin-top: 30px;margin-bottom:50px">
   <img src="/public/images/blog/clin_paper/figure1.png" class="">
   <div style="font-size:13px;text-align:left">
-  A representative clinical case, a a newborn with a fetal akinesia sequence phenotype, as viewed in clin.iobio. 
+  A representative clinical case, a newborn with a fetal akinesia sequence phenotype, as viewed in clin.iobio. 
    </div>
 </div>
 
